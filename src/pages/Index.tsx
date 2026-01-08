@@ -78,10 +78,10 @@ const Index = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
+        {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
           <span className="text-sm">Scroll to explore</span>
           <ArrowDown size={20} />
-        </div>
+        </div> */}
       </main>
 
       {/* Decorative Quote */}
