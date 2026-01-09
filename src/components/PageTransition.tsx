@@ -28,15 +28,22 @@ const PageTransition = ({ children }: PageTransitionProps) => {
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
+      setCurrentPath(location.pathname)
       return;
     }
 
-    if (currentPath !== location.pathname) {
+    // if (currentPath !== location.pathname) {
+    // ** Only trigger if the path actually changed
+    if (currentPath !== location.pathname && !isFlipping) {
       // Start flip animation - keep showing old path as flipping page
       setFlippingPath(currentPath);
       setIsFlipping(true);
       // Update current path to show new content underneath
-      setCurrentPath(location.pathname);
+      // setCurrentPath(location.pathname);
+      // ** Delay updating current path slightly to ensure old content renders first before page flip
+      const updatePathTimer = setTimeout(() => {
+        setCurrentPath(location.pathname)
+      }, 50);
       
       const animationEndTimer = setTimeout(() => {
         setIsFlipping(false);
@@ -44,10 +51,12 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       }, 2800);
 
       return () => {
+        clearTimeout(updatePathTimer)
         clearTimeout(animationEndTimer);
       };
     }
-  }, [location.pathname, currentPath]);
+  // }, [location.pathname, currentPath]);
+  }, [location.pathname]);
 
   return (
     <div className="relative min-h-screen overflow-hidden" style={{ perspective: '3000px' }}>
