@@ -105,7 +105,7 @@ const Index = () => {
 
       {/* Decorative Quote */}
       <div className="absolute bottom-4 right-4 md:right-8 text-xs md:text-sm text-muted-foreground font-mono italic opacity-60">
-        "That's so fetch!" ✨
+        "The limit does not exist!"✨
       </div>
     </div>
   );
