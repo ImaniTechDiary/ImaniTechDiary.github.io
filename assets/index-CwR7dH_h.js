@@ -224,4 +224,4 @@ Error generating stack: `+i.message+`
             transform: translateX(100%);
           }
         }
-      `})]})},E2=new AS,C2=()=>S.jsx(LS,{client:E2,children:S.jsxs(aS,{children:[S.jsx(H1,{}),S.jsx(Cw,{}),S.jsx(i2,{children:S.jsx(S2,{})})]})});Dh(document.getElementById("root")).render(S.jsx(C2,{}));
+      `})]})},E2=new AS,C2=()=>S.jsx(LS,{client:E2,children:S.jsxs(aS,{children:[S.jsx(H1,{}),S.jsx(Cw,{}),S.jsx(i2,{basename:"https://ImaniTechDiary.github.io",children:S.jsx(S2,{})})]})});Dh(document.getElementById("root")).render(S.jsx(C2,{}));
