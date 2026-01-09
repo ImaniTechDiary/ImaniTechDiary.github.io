@@ -12,7 +12,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter 
+      // basename="https://imanitechdiary.github.io/"
+      >
         <PageTransition />
       </BrowserRouter>
     </TooltipProvider>
