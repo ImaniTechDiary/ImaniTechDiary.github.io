@@ -8,7 +8,7 @@ import Navigation from "@/components/Navigation";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
 import TypewriterText from "@/components/TypewriterText";
 import { Laptop } from "lucide-react";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
   return (
@@ -43,12 +43,31 @@ const Index = () => {
         <div className="mb-8 relative">
           <div className="absolute -inset-4 bg-accent/50 rounded-lg blur-xl" />
           <div className="relative bg-card/90 backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-xl border-2 border-primary/30 flex items-center gap-1">
+            <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
+              <Laptop 
+                size={48} 
+                className="text-primary drop-shadow-lg md:w-16 md:h-16" 
+                strokeWidth={1.5}
+              />
+              <Heart 
+                size={48} 
+                className="text-primary drop-shadow-lg md:w-16 md:h-16" 
+                strokeWidth={1.5}
+                fill="none"
+              />
+            </div>
             <CutoutTitle text="Imani Tech Diary" size="xl" />
             <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
                 className="text-primary drop-shadow-lg md:w-16 md:h-16" 
                 strokeWidth={1.5}
+              />
+              <Heart 
+                size={48} 
+                className="text-primary drop-shadow-lg md:w-16 md:h-16" 
+                strokeWidth={1.5}
+                fill="none"
               />
             </div>
           </div>
