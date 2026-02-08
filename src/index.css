@@ -300,7 +300,25 @@ All colors MUST be HSL.
   box-shadow:
     inset 0 0 0 1px hsl(240 4% 80% / 0.6),
     inset 0 18px 30px hsl(240 10% 10% / 0.08);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.book-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.book-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.book-content::-webkit-scrollbar-thumb {
+  background: hsl(330 85% 65% / 0.6);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 @media (max-width: 640px) {

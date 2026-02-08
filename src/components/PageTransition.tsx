@@ -59,7 +59,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
   }, [location.pathname]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden" style={{ perspective: '3200px' }}>
+    <div className="relative h-full w-full overflow-visible" style={{ perspective: '3200px' }}>
       {/* New page content underneath */}
       <div className="h-full w-full">
         {getPageForPath(currentPath)}
