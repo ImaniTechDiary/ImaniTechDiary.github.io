@@ -7,19 +7,27 @@ import ProjectCard from "@/components/ProjectCard";
 
 // Sample projects data - easy to add more!
 const projects = [
+  // {
+  //   id: 1,
+  //   title: "E-Commerce Platform",
+  //   description: "A full-stack shopping experience with cart functionality and payment integration.",
+  //   tags: ["React", "Node.js", "Stripe"],
+  //   rotation: -2,
+  // },
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack shopping experience with cart functionality and payment integration.",
+    title: "Yem AP",
+    description: "to write later...",
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
   },
   {
     id: 2,
-    title: "Weather Dashboard",
-    description: "Real-time weather data visualization with beautiful animations and forecasts.",
+    title: "MUNYUN",
+    description: "to write later...",
     tags: ["TypeScript", "API", "Charts"],
     rotation: 3,
+    image: "/Munyun-logo.png",
   },
   {
     id: 3,
@@ -92,6 +100,7 @@ const Projects = () => {
                 description={project.description}
                 tags={project.tags}
                 rotation={project.rotation}
+                image={project.image}
               />
             ))}
           </div>
