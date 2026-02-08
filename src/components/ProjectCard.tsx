@@ -6,6 +6,7 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   image?: string;
+  hidePlaceholder?: boolean;
   rotation?: number;
   className?: string;
 }
@@ -15,6 +16,7 @@ const ProjectCard = ({
   description, 
   tags, 
   image,
+  hidePlaceholder = false,
   rotation = 0,
   className 
 }: ProjectCardProps) => {
@@ -53,9 +55,11 @@ const ProjectCard = ({
         {/* Card content */}
         <div className="bg-card p-4">
           {/* Project image placeholder */}
-          <div className="w-full h-32 bg-muted/50 mb-3 flex items-center justify-center overflow-hidden">
+          <div className="w-full h-32 bg-primary/10 mb-3 flex items-center justify-center overflow-hidden">
             {image ? (
               <img src={image} alt={title} className="w-full h-full object-cover" />
+            ) : hidePlaceholder ? (
+              <div className="w-full h-full" />
             ) : (
               <div className="text-muted-foreground text-xs font-mono">[ screenshot ]</div>
             )}
