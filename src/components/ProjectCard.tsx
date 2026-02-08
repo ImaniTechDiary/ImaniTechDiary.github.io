@@ -7,6 +7,7 @@ interface ProjectCardProps {
   tags: string[];
   image?: string;
   hidePlaceholder?: boolean;
+  href?: string;
   rotation?: number;
   className?: string;
 }
@@ -17,6 +18,7 @@ const ProjectCard = ({
   tags, 
   image,
   hidePlaceholder = false,
+  href,
   rotation = 0,
   className 
 }: ProjectCardProps) => {
@@ -26,8 +28,13 @@ const ProjectCard = ({
     "top-0 right-1/4 translate-x-1/2 -translate-y-1/2 rotate-[12deg]",
   ];
 
+  const CardWrapper = href ? "a" : "div";
+
   return (
-    <div 
+    <CardWrapper
+      {...(href
+        ? { href, target: "_blank", rel: "noreferrer" }
+        : {})}
       className={cn(
         "relative group cursor-pointer transition-all duration-300 hover:scale-105 hover:z-10",
         className
@@ -93,7 +100,7 @@ const ProjectCard = ({
       <div className="absolute -bottom-2 -right-2 text-lg opacity-60 group-hover:opacity-100 transition-opacity">
         ✨
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 
