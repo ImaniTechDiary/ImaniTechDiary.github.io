@@ -28,6 +28,7 @@ const projects = [
     tags: ["TypeScript", "API", "Charts"],
     rotation: 3,
     image: "/Munyun-logo.png",
+    href: "https://munyun.pages.dev/login",
   },
   {
     id: 3,
@@ -101,14 +102,22 @@ const Projects = () => {
                 tags={project.tags}
                 rotation={project.rotation}
                 image={project.image}
+                href={project.href}
               />
             ))}
           </div>
         </div>
         
         {/* Bottom decorative text */}
-        <div className="text-center mt-16 text-sm text-muted-foreground font-mono italic opacity-60">
-          "Get in loser, we're building apps" 💅
+        <div className="mt-16 flex items-center justify-center gap-3 text-center">
+          <span className="text-base text-primary font-semibold font-mono italic">
+            "Get in loser, we're building apps"
+          </span>
+          <img
+            src="/PinkCar.png"
+            alt="Pink car"
+            className="w-16 h-auto opacity-90"
+          />
         </div>
       </main>
     </div>
