@@ -303,6 +303,7 @@ All colors MUST be HSL.
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
+  scrollbar-color: hsl(330 90% 60% / 0.9) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -315,7 +316,7 @@ All colors MUST be HSL.
 }
 
 .book-content::-webkit-scrollbar-thumb {
-  background: hsl(330 85% 65% / 0.6);
+  background: hsl(330 90% 60% / 0.9);
   border-radius: 999px;
   border: 2px solid transparent;
   background-clip: padding-box;
