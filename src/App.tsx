@@ -13,9 +13,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter 
-      // basename="https://imanitechdiary.github.io/"
+      // basename="https://imanitechdiary.github.io/
       >
-        <PageTransition />
+        <div className="book-stage">
+          <div className="book-frame" aria-hidden="true">
+            <div className="book-spine" />
+            <div className="book-pages" />
+            <div className="book-corner" />
+          </div>
+          <div className="book-content">
+            <PageTransition />
+          </div>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -53,7 +53,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden relative">
+    <div className="min-h-full bg-background overflow-hidden relative">
       <Navigation />
       <ScrapbookBackground />
       
@@ -68,7 +68,7 @@ const Projects = () => {
       <KissMarkDecoration className="bottom-32 left-12" size="sm" rotation={-25} opacity={0.15} />
       
       {/* Main Content */}
-      <main className="relative z-10 min-h-screen px-4 md:px-8 pt-24 pb-16">
+      <main className="relative z-10 min-h-full px-4 md:px-8 pt-24 pb-16">
         {/* Page Title */}
         <div className="text-center mb-12">
           <div className="inline-block relative">

@@ -12,7 +12,7 @@ import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-hidden relative">
+    <div className="min-h-full bg-background overflow-hidden relative">
       <Navigation />
       <ScrapbookBackground />
       
@@ -33,7 +33,7 @@ const Index = () => {
       <KissMarkDecoration className="bottom-1/3 left-1/4" size="sm" rotation={45} opacity={0.2} />
       
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 pt-16">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-full px-4 pt-16">
         {/* Binary Code Animation */}
         <div className="mb-8 text-center">
           <BinaryCode />
