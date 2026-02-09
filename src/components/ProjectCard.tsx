@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image?: string;
   hidePlaceholder?: boolean;
   href?: string;
+  imageClassName?: string;
   rotation?: number;
   className?: string;
 }
@@ -19,6 +20,7 @@ const ProjectCard = ({
   image,
   hidePlaceholder = false,
   href,
+  imageClassName,
   rotation = 0,
   className 
 }: ProjectCardProps) => {
@@ -64,7 +66,7 @@ const ProjectCard = ({
           {/* Project image placeholder */}
           <div className="w-full h-32 bg-primary/10 mb-3 flex items-center justify-center overflow-hidden">
             {image ? (
-              <img src={image} alt={title} className="w-full h-full object-cover" />
+              <img src={image} alt={title} className={cn("w-full h-full object-cover", imageClassName)} />
             ) : hidePlaceholder ? (
               <div className="w-full h-full" />
             ) : (
