@@ -21,7 +21,7 @@ const projects = [
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
     image: "/YemAPLogo.png",
-    imageClassName: "object-contain p-2",
+    imageClassName: "object-contain p-7",
   },
   {
     id: 2,
