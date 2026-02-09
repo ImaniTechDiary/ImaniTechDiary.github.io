@@ -20,6 +20,8 @@ const projects = [
     description: "to write later...",
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
+    image: "/YemAPLogo.png",
+    imageClassName: "object-contain p-2",
   },
   {
     id: 2,
@@ -103,6 +105,7 @@ const Projects = () => {
                 rotation={project.rotation}
                 image={project.image}
                 href={project.href}
+                imageClassName={project.imageClassName}
               />
             ))}
           </div>
