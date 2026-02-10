@@ -22,7 +22,7 @@ const projects = [
     rotation: -2,
     image: "/YemAPLogo.png",
     imageClassName: "yemAPLogo object-contain p-7",
-    href: "yemap.pages.dev"
+    href: "https://yemap.pages.dev"
   },
   {
     id: 2,
