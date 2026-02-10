@@ -21,7 +21,8 @@ const projects = [
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
     image: "/YemAPLogo.png",
-    imageClassName: "object-contain p-7",
+    imageClassName: "yemAPLogo object-contain p-7",
+    href: "yemap.pages.dev"
   },
   {
     id: 2,
@@ -64,7 +65,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-full bg-background overflow-hidden relative">
+    <div className="min-h-full bg-background relative">
       <Navigation />
       <ScrapbookBackground />
       
