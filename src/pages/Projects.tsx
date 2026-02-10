@@ -46,6 +46,9 @@ const projects = [
     description: "Creative developer portfolio with unique animations and interactions.",
     tags: ["Design", "CSS", "Animation"],
     rotation: 2,
+    image: "/ITD-logo.png",
+    imageClassName: "object-contain p-3",
+    href: "https://imanitechdiary.github.io/projects",
   },
   {
     id: 5,
