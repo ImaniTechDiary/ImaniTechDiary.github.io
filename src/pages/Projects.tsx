@@ -35,20 +35,20 @@ const projects = [
   },
   {
     id: 3,
-    title: "Task Management App",
-    description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
-    tags: ["React", "DnD", "Firebase"],
-    rotation: -1,
-  },
-  {
-    id: 4,
     title: "Portfolio Website",
     description: "Creative developer portfolio with unique animations and interactions.",
     tags: ["Design", "CSS", "Animation"],
-    rotation: 2,
+    rotation: -1,
     image: "/ITD-logo.png",
     imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
     href: "https://imanitechdiary.github.io/projects",
+  },
+  {
+    id: 4,
+    title: "Task Management App",
+    description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
+    tags: ["React", "DnD", "Firebase"],
+    rotation: 2,
   },
   {
     id: 5,
