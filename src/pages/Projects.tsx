@@ -41,7 +41,7 @@ const projects = [
     rotation: -1,
     image: "/ITD-logo.png",
     imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
-    href: "https://imanitechdiary.github.io/projects",
+    href: "https://imanitechdiary.github.io/",
   },
   {
     id: 4,
