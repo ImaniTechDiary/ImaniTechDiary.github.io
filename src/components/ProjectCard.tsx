@@ -38,10 +38,10 @@ const ProjectCard = ({
         ? { href, target: "_blank", rel: "noreferrer" }
         : {})}
       className={cn(
-        "relative group cursor-pointer transition-all duration-300 hover:scale-105 hover:z-10",
+        "project-card relative group cursor-pointer hover:z-10",
         className
       )}
-      style={{ transform: `rotate(${rotation}deg)` }}
+      style={{ "--card-rot": `${rotation}deg` } as React.CSSProperties}
     >
       {/* Tape strips */}
       <div className={cn("absolute w-12 h-4 bg-primary/20 backdrop-blur-sm z-20", tapePositions[0])} />

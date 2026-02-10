@@ -307,6 +307,21 @@ All colors MUST be HSL.
   -webkit-overflow-scrolling: touch;
 }
 
+.book-content .book-nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+.project-card {
+  transform: rotate(var(--card-rot));
+  transition: transform 300ms ease, z-index 300ms ease;
+}
+
+.project-card:hover {
+  transform: rotate(calc(var(--card-rot) * -1)) scale(1.05);
+}
+
 .book-content::-webkit-scrollbar {
   width: 10px;
 }
