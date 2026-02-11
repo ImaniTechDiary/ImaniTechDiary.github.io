@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image?: string;
   hidePlaceholder?: boolean;
   href?: string;
+  onTellMeMore?: () => void;
   imageClassName?: string;
   rotation?: number;
   className?: string;
@@ -20,6 +21,7 @@ const ProjectCard = ({
   image,
   hidePlaceholder = false,
   href,
+  onTellMeMore,
   imageClassName,
   rotation = 0,
   className 
@@ -30,18 +32,13 @@ const ProjectCard = ({
     "top-0 right-1/4 translate-x-1/2 -translate-y-1/2 rotate-[12deg]",
   ];
 
-  const CardWrapper = href ? "a" : "div";
-
   return (
-    <CardWrapper
-      {...(href
-        ? { href, target: "_blank", rel: "noreferrer" }
-        : {})}
+    <div
       className={cn(
-        "project-card relative group cursor-pointer hover:z-10",
+        "project-card relative group hover:z-10",
         className
       )}
-      style={{ "--card-rot": `${rotation}deg` } as React.CSSProperties}
+      style={{ "--card-rot": `${rotation}deg` } as CSSProperties}
     >
       {/* Tape strips */}
       <div className={cn("absolute w-12 h-4 bg-primary/20 backdrop-blur-sm z-20", tapePositions[0])} />
@@ -95,6 +92,31 @@ const ProjectCard = ({
               </span>
             ))}
           </div>
+
+          {/* Card actions */}
+          <div className="mt-4 flex items-center justify-between text-xs font-mono">
+            {href ? (
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
+              >
+                Visit project
+              </a>
+            ) : (
+              <span />
+            )}
+            {onTellMeMore ? (
+              <button
+                type="button"
+                onClick={onTellMeMore}
+                className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              >
+                Tell me more
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
       
@@ -102,7 +124,7 @@ const ProjectCard = ({
       <div className="absolute -bottom-2 -right-2 text-lg opacity-60 group-hover:opacity-100 transition-opacity">
         ✨
       </div>
-    </CardWrapper>
+    </div>
   );
 };
 

@@ -1,12 +1,23 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
 import FloatingDoodle from "@/components/FloatingDoodle";
 import KissMarkDecoration from "@/components/KissMarkDecoration";
 import CutoutTitle from "@/components/CutoutTitle";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectEnvelopeModal, { ProjectModalContent } from "@/components/ProjectEnvelopeModal";
 
 // Sample projects data - easy to add more!
-const projects = [
+interface ProjectItem extends ProjectModalContent {
+  id: number;
+  tags: string[];
+  rotation: number;
+  image?: string;
+  imageClassName?: string;
+  href?: string;
+}
+
+const projects: ProjectItem[] = [
   // {
   //   id: 1,
   //   title: "E-Commerce Platform",
@@ -20,9 +31,18 @@ const projects = [
     description: "to write later...",
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
-    image: "/YemAPLogo.png",
-    imageClassName: "yemAPLogo object-contain p-7",
-    href: "https://yemap.pages.dev"
+    image: "/YemAPMainLogo.png",
+    imageClassName: "yemAPLogo object-contain p-0 w-[125%] h-[125%] max-w-none",
+    href: "https://yemap.pages.dev",
+    summary: "A focused platform built to organize AP exam prep with cleaner workflows and a faster UI.",
+    features: [
+      "Structured AP subject pages with focused resources",
+      "Responsive interface for mobile and desktop study sessions",
+      "Fast-loading front end optimized for quick navigation",
+    ],
+    links: [
+      { label: "Live Site", url: "https://yemap.pages.dev" },
+    ],
   },
   {
     id: 2,
@@ -32,6 +52,15 @@ const projects = [
     rotation: 3,
     image: "/Munyun-logo.png",
     href: "https://munyun.pages.dev/login",
+    summary: "MUNYUN helps track money activity with a cleaner dashboard and easier account flows.",
+    features: [
+      "Authentication flow and protected dashboard pages",
+      "Data-driven widgets for quick financial snapshots",
+      "Simple structure for adding future analytics modules",
+    ],
+    links: [
+      { label: "Live App", url: "https://munyun.pages.dev/login" },
+    ],
   },
   {
     id: 3,
@@ -42,6 +71,15 @@ const projects = [
     image: "/ITD-logo.png",
     imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
     href: "https://imanitechdiary.github.io/",
+    summary: "A personality-driven portfolio focused on visual storytelling, motion, and project highlights.",
+    features: [
+      "Custom visual theme with scrapbook-inspired components",
+      "Project-first information architecture",
+      "Reusable React components for quick iteration",
+    ],
+    links: [
+      { label: "Portfolio", url: "https://imanitechdiary.github.io/" },
+    ],
   },
   {
     id: 4,
@@ -49,6 +87,12 @@ const projects = [
     description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
     tags: ["React", "DnD", "Firebase"],
     rotation: 2,
+    summary: "A collaborative kanban workflow tool built for planning and execution across teams.",
+    features: [
+      "Drag-and-drop board interactions",
+      "Task ownership and progress visibility",
+      "Cloud-ready backend integration",
+    ],
   },
   {
     id: 5,
@@ -56,6 +100,12 @@ const projects = [
     description: "Feature-rich social platform with real-time updates and messaging.",
     tags: ["Full Stack", "WebSocket", "Auth"],
     rotation: -3,
+    summary: "A social feed concept with live updates, messaging, and identity-aware interactions.",
+    features: [
+      "Real-time post and chat events",
+      "Authentication and profile-aware feeds",
+      "Scalable full-stack architecture patterns",
+    ],
   },
   {
     id: 6,
@@ -63,10 +113,18 @@ const projects = [
     description: "Intelligent conversational interface powered by machine learning.",
     tags: ["AI", "Python", "NLP"],
     rotation: 1,
+    summary: "An assistant interface focused on natural conversation, context carry-over, and practical AI outputs.",
+    features: [
+      "Conversational prompt orchestration",
+      "Context handling for more coherent responses",
+      "Extensible architecture for tool integrations",
+    ],
   },
 ];
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
   return (
     <div className="min-h-full bg-background relative">
       <Navigation />
@@ -110,6 +168,7 @@ const Projects = () => {
                 image={project.image}
                 href={project.href}
                 imageClassName={project.imageClassName}
+                onTellMeMore={() => setSelectedProject(project)}
               />
             ))}
           </div>
@@ -127,6 +186,12 @@ const Projects = () => {
           />
         </div>
       </main>
+
+      <ProjectEnvelopeModal
+        isOpen={Boolean(selectedProject)}
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 };
