@@ -88,15 +88,20 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
         className="relative w-full max-w-3xl"
       >
         {/* Heart seal */}
-        <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-          <div className="relative h-20 w-20">
-            <div className="absolute bottom-1 left-1/2 h-12 w-12 -translate-x-1/2 rotate-45 rounded-sm bg-rose-300 shadow-md" />
-            <div className="absolute left-2 top-3 h-10 w-10 rounded-full bg-rose-300" />
-            <div className="absolute right-2 top-3 h-10 w-10 rounded-full bg-rose-300" />
-          </div>
+        <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
+          <svg
+            viewBox="0 0 100 90"
+            className="h-20 w-20 drop-shadow-md"
+            aria-hidden="true"
+          >
+            <path
+              d="M50 84C50 84 8 59 8 31C8 17 19 8 32 8C41 8 47 13 50 20C53 13 59 8 68 8C81 8 92 17 92 31C92 59 50 84 50 84Z"
+              className="fill-rose-300"
+            />
+          </svg>
         </div>
 
-        <div className="relative overflow-hidden rounded-2xl border-2 border-rose-300 bg-[#fff8ef] shadow-2xl">
+        <div className="relative z-10 overflow-hidden rounded-2xl border-2 border-rose-300 bg-[#fff8ef] shadow-2xl">
           {/* Envelope flap */}
           <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-rose-200 via-rose-100 to-transparent [clip-path:polygon(0_0,100%_0,50%_100%)]" />
 

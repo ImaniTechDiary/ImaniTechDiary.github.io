@@ -111,9 +111,11 @@ const ProjectCard = ({
               <button
                 type="button"
                 onClick={onTellMeMore}
-                className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                className="group relative inline-flex h-20 w-24 items-center justify-center bg-rose-300 text-[12px] font-semibold text-white leading-tight shadow-[-6px_7px_0px_0px_#ff1493] transition-transform hover:scale-105 rotate-[35deg] [clip-path:polygon(50%_100%,40%_92%,28%_80%,16%_64%,8%_47%,10%_31%,20%_19%,32%_14%,42%_18%,50%_28%,58%_18%,68%_14%,80%_19%,90%_31%,92%_47%,84%_64%,72%_80%,60%_92%)]"
               >
-                Tell me more
+                <span className="-rotate-[35deg] w-14 text-center lowercase transition-colors group-hover:text-[#ff1493]">
+                  tell me more
+                </span>
               </button>
             ) : null}
           </div>
