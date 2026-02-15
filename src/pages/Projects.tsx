@@ -53,7 +53,8 @@ const projects: ProjectItem[] = [
     tags: ["TypeScript", "API", "Charts"],
     rotation: 3,
     category: "full-stack",
-    image: "/Munyun-logo.png",
+    image: "/MunyunLogo.png",
+    imageClassName: "object-contain p-0 w-[128%] h-[128%] max-w-none [image-rendering:auto]",
     href: "https://munyun.pages.dev/login",
     summary: "MUNYUN helps track money activity with a cleaner dashboard and easier account flows.",
     features: [
