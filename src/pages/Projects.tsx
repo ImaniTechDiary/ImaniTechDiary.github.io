@@ -188,7 +188,7 @@ const Projects = () => {
       {/* Main Content */}
       <main className="relative z-10 min-h-full px-4 md:px-8 pt-24 pb-16">
         {/* Page Title */}
-        <div className="text-center mb-12">
+        <div className="text-center -mt-10 mb-[5.5rem]">
           <div className="inline-block relative">
             <div className="absolute -inset-4 bg-accent/50 rounded-lg blur-xl" />
             <div className="relative bg-card/90 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-xl border-2 border-primary/30">
