@@ -56,7 +56,7 @@ const Index = () => {
                 fill="none"
               />
             </div>
-            <CutoutTitle text="Imani Tech Diary" size="xl" />
+            <CutoutTitle text="Imani Tech Diary" size="xl" emphasizeFirstLetter />
             <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
@@ -74,9 +74,9 @@ const Index = () => {
         </div>
 
         {/* Tagline */}
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 text-center max-w-md font-medium">
+        {/* <p className="text-lg md:text-xl text-muted-foreground mb-8 text-center max-w-md font-medium">
           <TypewriterText 
-            phrases={["Software Engineer", "Designer", "Creative Coder", "Problem Solver"]} 
+            phrases={["Software Engineer", "Designer", "Creative Coder", "Problem Solver"]}          
             typingSpeed={80}
             deletingSpeed={40}
             pauseDuration={1500}
@@ -84,7 +84,7 @@ const Index = () => {
           <span className="inline-flex items-center ml-2 text-primary">
             <Sparkles size={18} className="animate-pulse" />
           </span>
-        </p>
+        </p> */}
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
