@@ -141,22 +141,22 @@ const Projects = () => {
     {
       label: "All Projects",
       value: "all",
-      stickerClassName: "bg-[#FFE66D] border-[#D8B800] -rotate-2",
+      stickerClassName: "bg-[#FF5D8F] border-[#B82356] -rotate-2",
     },
     {
       label: "Full Stack Apps",
       value: "full-stack",
-      stickerClassName: "bg-[#B9FBC0] border-[#2B8A3E] rotate-1",
+      stickerClassName: "bg-[#FF78A8] border-[#C43D72] rotate-1",
     },
     {
       label: "Landing Pages",
       value: "landing-page",
-      stickerClassName: "bg-[#FFC6D9] border-[#C76A8A] -rotate-1",
+      stickerClassName: "bg-[#FF94BC] border-[#CA4F7F] -rotate-1",
     },
     {
       label: "HTML Emails",
       value: "html-email",
-      stickerClassName: "bg-[#B8E7FF] border-[#2E7AA0] rotate-2",
+      stickerClassName: "bg-[#FFB1D1] border-[#D06695] rotate-2",
     },
   ];
 
@@ -205,7 +205,7 @@ const Projects = () => {
                   aria-current={isActive ? "page" : undefined}
                   className={[
                     "relative inline-flex items-center justify-center rounded-md border-2 px-4 py-2",
-                    "font-mono text-xs md:text-sm uppercase tracking-wide text-foreground shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
+                    "font-mono text-xs md:text-sm uppercase tracking-wide text-white shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
                     "transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.02]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                     filter.stickerClassName,
