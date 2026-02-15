@@ -137,26 +137,31 @@ const Projects = () => {
     label: string;
     value: "all" | ProjectItem["category"];
     stickerClassName: string;
+    activeStickerClassName: string;
   }> = [
     {
       label: "All Projects",
       value: "all",
       stickerClassName: "bg-[#FF5D8F] border-[#B82356] -rotate-2",
+      activeStickerClassName: "bg-[#E43E74] border-[#A61D4B]",
     },
     {
       label: "Full Stack Apps",
       value: "full-stack",
       stickerClassName: "bg-[#FF78A8] border-[#C43D72] rotate-1",
+      activeStickerClassName: "bg-[#E95E92] border-[#A92B5D]",
     },
     {
       label: "Landing Pages",
       value: "landing-page",
       stickerClassName: "bg-[#FF94BC] border-[#CA4F7F] -rotate-1",
+      activeStickerClassName: "bg-[#EA78A4] border-[#AD3E69]",
     },
     {
       label: "HTML Emails",
       value: "html-email",
       stickerClassName: "bg-[#FFB1D1] border-[#D06695] rotate-2",
+      activeStickerClassName: "bg-[#EC8EB6] border-[#B84B7D]",
     },
   ];
 
@@ -209,10 +214,12 @@ const Projects = () => {
                     "transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.02]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                     filter.stickerClassName,
-                    isActive ? "scale-105 ring-2 ring-primary/70 ring-offset-2" : "opacity-95",
+                    isActive
+                      ? `scale-105 ring-2 ring-primary/70 ring-offset-2 ${filter.activeStickerClassName}`
+                      : "opacity-95",
                   ].join(" ")}
                 >
-                  <span className="pointer-events-none absolute -top-2 h-3 w-10 rounded-sm bg-white/75 shadow-sm" />
+                  <span className="pointer-events-none absolute -top-2 h-3 w-10 rounded-sm bg-[#B1006A] shadow-sm" />
                   {filter.label}
                 </a>
               );
