@@ -195,7 +195,7 @@ const Projects = () => {
               <CutoutTitle text="My Projects" size="lg" />
             </div>
           </div>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-5">
             {filterLinks.map((filter) => {
               const isActive = activeFilter === filter.value;
 
