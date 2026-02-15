@@ -12,6 +12,7 @@ interface ProjectItem extends ProjectModalContent {
   id: number;
   tags: string[];
   rotation: number;
+  category: "full-stack" | "landing-page" | "html-email";
   image?: string;
   imageClassName?: string;
   href?: string;
@@ -31,6 +32,7 @@ const projects: ProjectItem[] = [
     description: "to write later...",
     tags: ["React", "Node.js", "Stripe"],
     rotation: -2,
+    category: "full-stack",
     image: "/YemAPMainLogo.png",
     imageClassName: "yemAPLogo object-contain p-0 w-[125%] h-[125%] max-w-none",
     href: "https://yemap.pages.dev",
@@ -50,6 +52,7 @@ const projects: ProjectItem[] = [
     description: "to write later...",
     tags: ["TypeScript", "API", "Charts"],
     rotation: 3,
+    category: "full-stack",
     image: "/Munyun-logo.png",
     href: "https://munyun.pages.dev/login",
     summary: "MUNYUN helps track money activity with a cleaner dashboard and easier account flows.",
@@ -68,6 +71,7 @@ const projects: ProjectItem[] = [
     description: "Creative developer portfolio with unique animations and interactions.",
     tags: ["Design", "CSS", "Animation"],
     rotation: -1,
+    category: "landing-page",
     image: "/ITD-logo.png",
     imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
     href: "https://imanitechdiary.github.io/",
@@ -87,6 +91,7 @@ const projects: ProjectItem[] = [
     description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
     tags: ["React", "DnD", "Firebase"],
     rotation: 2,
+    category: "full-stack",
     summary: "A collaborative kanban workflow tool built for planning and execution across teams.",
     features: [
       "Drag-and-drop board interactions",
@@ -100,6 +105,7 @@ const projects: ProjectItem[] = [
     description: "Feature-rich social platform with real-time updates and messaging.",
     tags: ["Full Stack", "WebSocket", "Auth"],
     rotation: -3,
+    category: "full-stack",
     summary: "A social feed concept with live updates, messaging, and identity-aware interactions.",
     features: [
       "Real-time post and chat events",
@@ -113,6 +119,7 @@ const projects: ProjectItem[] = [
     description: "Intelligent conversational interface powered by machine learning.",
     tags: ["AI", "Python", "NLP"],
     rotation: 1,
+    category: "full-stack",
     summary: "An assistant interface focused on natural conversation, context carry-over, and practical AI outputs.",
     features: [
       "Conversational prompt orchestration",
@@ -124,6 +131,39 @@ const projects: ProjectItem[] = [
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [activeFilter, setActiveFilter] = useState<"all" | ProjectItem["category"]>("all");
+
+  const filterLinks: Array<{
+    label: string;
+    value: "all" | ProjectItem["category"];
+    stickerClassName: string;
+  }> = [
+    {
+      label: "All Projects",
+      value: "all",
+      stickerClassName: "bg-[#FFE66D] border-[#D8B800] -rotate-2",
+    },
+    {
+      label: "Full Stack Apps",
+      value: "full-stack",
+      stickerClassName: "bg-[#B9FBC0] border-[#2B8A3E] rotate-1",
+    },
+    {
+      label: "Landing Pages",
+      value: "landing-page",
+      stickerClassName: "bg-[#FFC6D9] border-[#C76A8A] -rotate-1",
+    },
+    {
+      label: "HTML Emails",
+      value: "html-email",
+      stickerClassName: "bg-[#B8E7FF] border-[#2E7AA0] rotate-2",
+    },
+  ];
+
+  const filteredProjects = projects.filter((project) => {
+    if (activeFilter === "all") return true;
+    return project.category === activeFilter;
+  });
 
   return (
     <div className="min-h-full bg-background relative">
@@ -150,15 +190,40 @@ const Projects = () => {
               <CutoutTitle text="My Projects" size="lg" />
             </div>
           </div>
-          <p className="mt-6 text-muted-foreground font-mono text-sm">
-            ~ a collection of things I've built ~
-          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            {filterLinks.map((filter) => {
+              const isActive = activeFilter === filter.value;
+
+              return (
+                <a
+                  key={filter.value}
+                  href="#projects-grid"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    setActiveFilter(filter.value);
+                  }}
+                  aria-current={isActive ? "page" : undefined}
+                  className={[
+                    "relative inline-flex items-center justify-center rounded-md border-2 px-4 py-2",
+                    "font-mono text-xs md:text-sm uppercase tracking-wide text-foreground shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
+                    "transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.02]",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                    filter.stickerClassName,
+                    isActive ? "scale-105 ring-2 ring-primary/70 ring-offset-2" : "opacity-95",
+                  ].join(" ")}
+                >
+                  <span className="pointer-events-none absolute -top-2 h-3 w-10 rounded-sm bg-white/75 shadow-sm" />
+                  {filter.label}
+                </a>
+              );
+            })}
+          </div>
         </div>
         
         {/* Projects Grid - Collage Style */}
-        <div className="max-w-6xl mx-auto">
+        <div id="projects-grid" className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.id}
                 title={project.title}
@@ -172,6 +237,11 @@ const Projects = () => {
               />
             ))}
           </div>
+          {filteredProjects.length === 0 && (
+            <p className="mt-8 text-center font-mono text-sm text-muted-foreground">
+              No projects in this category yet.
+            </p>
+          )}
         </div>
         
         {/* Bottom decorative text */}
