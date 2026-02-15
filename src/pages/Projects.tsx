@@ -211,7 +211,7 @@ const Projects = () => {
                   className={[
                     "relative inline-flex items-center justify-center rounded-md border-2 px-4 py-2",
                     "font-mono text-xs md:text-sm uppercase tracking-wide text-white shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
-                    "transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.02]",
+                    "transition-all duration-200 hover:-translate-y-1.5 hover:scale-[1.08] hover:shadow-[5px_8px_0_rgba(0,0,0,0.3)]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                     filter.stickerClassName,
                     isActive
