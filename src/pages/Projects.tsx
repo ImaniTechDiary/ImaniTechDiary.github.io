@@ -88,11 +88,13 @@ const projects: ProjectItem[] = [
   },
   {
     id: 4,
-    title: "Task Management App",
+    title: "ReadABookOrSomething",
     description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
     tags: ["React", "DnD", "Firebase"],
     rotation: 2,
     category: "full-stack",
+    image: "ReadABookOrSomethingLogo.png",
+    imageClassName: "object-contain p-0 w-[85%] h-auto max-w-none",
     summary: "A collaborative kanban workflow tool built for planning and execution across teams.",
     features: [
       "Drag-and-drop board interactions",
