@@ -56,11 +56,20 @@ const projects: ProjectItem[] = [
     image: "/Munyun-logo.png",
     imageClassName: "object-contain p-0 w-[128%] h-[128%] max-w-none [image-rendering:auto]",
     href: "https://munyun.pages.dev/login",
-    summary: "MUNYUN helps track money activity with a cleaner dashboard and easier account flows.",
+    summary: "MUNYUN is a personal finance app that helps users track expenses, categorize spending, set budgets, and manage calendar events in one place. It supports both authenticated users (Google login) and a demo mode for quick exploration.",
+    // track money activity with a cleaner dashboard and easier account flows.",
     features: [
-      "Authentication flow and protected dashboard pages",
-      "Data-driven widgets for quick financial snapshots",
-      "Simple structure for adding future analytics modules",
+      "Expense CRUD: create, view, edit, and delete expenses",
+      "Auto-categorization: new expenses are assigned categories using keyword-based rules.",
+      "Manual recategorization: drag-and-drop between categories, with backend update support.",
+      "Quote widget: motivational quote pulled via backend endpoint.",
+      "Finance news widget: latest finance headlines pulled from an external news API.",
+      "Expense analytics: category totals are aggregated server-side and visualized as a pie chart.",
+      "Calendar/events: create and view events with time ranges."
+
+      // "Authentication flow and protected dashboard pages",
+      // "Data-driven widgets for quick financial snapshots",
+      // "Simple structure for adding future analytics modules",
     ],
     links: [
       { label: "Live App", url: "https://munyun.pages.dev/login" },
