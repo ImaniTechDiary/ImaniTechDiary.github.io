@@ -73,7 +73,7 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
   const embedUrl = toEmbedUrl(project.videoUrl);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 pt-20 md:p-6 md:pt-24">
       <button
         type="button"
         aria-label="Close modal"
@@ -85,7 +85,7 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
         role="dialog"
         aria-modal="true"
         aria-label={`${project.title} details`}
-        className="relative w-full max-w-3xl"
+        className="relative w-full max-w-5xl"
       >
         {/* Heart seal */}
         <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
@@ -105,7 +105,7 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
           {/* Envelope flap */}
           <div className="absolute left-0 right-0 top-0 h-24 bg-gradient-to-b from-rose-200 via-rose-100 to-transparent [clip-path:polygon(0_0,100%_0,50%_100%)]" />
 
-          <div className="relative max-h-[82vh] overflow-y-auto px-5 pb-6 pt-16 md:px-8 md:pt-20">
+          <div className="relative max-h-[calc(100dvh-8.5rem)] overflow-y-auto px-5 pb-6 pt-16 md:max-h-[calc(100dvh-10rem)] md:px-8 md:pt-20">
             <button
               type="button"
               onClick={onClose}
