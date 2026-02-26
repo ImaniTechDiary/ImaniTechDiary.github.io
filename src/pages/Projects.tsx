@@ -103,11 +103,15 @@ const projects: ProjectItem[] = [
     category: "full-stack",
     image: "ReadABookOrSomethingMainLogo.png",
     imageClassName: "object-contain p-0 w-[95%] h-auto max-w-none",
+    href: "https://readabookorsomething.pages.dev/",
     summary: "A collaborative kanban workflow tool built for planning and execution across teams.",
     features: [
       "Drag-and-drop board interactions",
       "Task ownership and progress visibility",
       "Cloud-ready backend integration",
+    ],
+    links: [
+      { label: "Visit project", url: "https://readabookorsomething.pages.dev/" },
     ],
   },
   {
