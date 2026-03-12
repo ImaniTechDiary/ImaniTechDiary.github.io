@@ -131,7 +131,7 @@ const projects: ProjectItem[] = [
       "inline CSS styling for email client compatibility",
     ],
     links: [
-      {label: "Visit project", url: "/public/email-templates/starseed-welcome-email/"},
+      {label: "Visit project", url: "/email-templates/starseed-welcome-email/"},
       {label: "View code", url: "https://github.com/ImaniTechDiary/Starseed-Email"}
     ]
   },
