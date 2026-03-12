@@ -1,0 +1,36 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="48" fill="#090B16"/>
+  <rect x="110" y="70" width="980" height="760" rx="36" fill="url(#bg)"/>
+  <circle cx="240" cy="190" r="120" fill="#8A2BE2" fill-opacity="0.28"/>
+  <circle cx="940" cy="220" r="110" fill="#38BDF8" fill-opacity="0.16"/>
+  <circle cx="620" cy="600" r="150" fill="#FF3C78" fill-opacity="0.10"/>
+  <rect x="180" y="150" width="180" height="28" rx="14" fill="#FCFCFF" fill-opacity="0.88"/>
+  <rect x="900" y="146" width="120" height="38" rx="19" fill="#A855F7" fill-opacity="0.16" stroke="#A855F7" stroke-opacity="0.5" stroke-width="2"/>
+  <rect x="900" y="159" width="54" height="12" rx="6" fill="#D8B4FE"/>
+  <rect x="180" y="250" width="150" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.45"/>
+  <rect x="180" y="290" width="320" height="58" rx="18" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="180" y="360" width="420" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.26"/>
+  <rect x="180" y="396" width="390" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.18"/>
+  <rect x="180" y="462" width="520" height="164" rx="28" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+  <rect x="220" y="506" width="240" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.28"/>
+  <rect x="220" y="558" width="236" height="52" rx="26" fill="url(#button)"/>
+  <rect x="480" y="572" width="140" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.32"/>
+  <circle cx="238" cy="700" r="24" fill="#A855F7" fill-opacity="0.16" stroke="#A855F7" stroke-opacity="0.34" stroke-width="2"/>
+  <circle cx="238" cy="700" r="7" fill="#D8B4FE"/>
+  <rect x="280" y="684" width="220" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.82"/>
+  <rect x="280" y="714" width="310" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.24"/>
+  <circle cx="238" cy="776" r="24" fill="#A855F7" fill-opacity="0.16" stroke="#A855F7" stroke-opacity="0.34" stroke-width="2"/>
+  <circle cx="238" cy="776" r="7" fill="#D8B4FE"/>
+  <rect x="280" y="760" width="220" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.82"/>
+  <rect x="280" y="790" width="310" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.24"/>
+  <defs>
+    <linearGradient id="bg" x1="600" y1="70" x2="600" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#693BA1"/>
+      <stop offset="1" stop-color="#1F1F48"/>
+    </linearGradient>
+    <linearGradient id="button" x1="220" y1="558" x2="456" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>
