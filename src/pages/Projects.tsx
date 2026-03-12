@@ -118,70 +118,56 @@ const projects: ProjectItem[] = [
   },
   {
     id: 5,
-    title: "Starseed Welcome Email",
-    description: "Hosted HTML email concept with a live preview embedded directly in the portfolio.",
-    tags: ["HTML Email", "Responsive CSS", "Email Design"],
+    title: "Welcome Email Template",
+    description: "A responsive onboarding email template.",
+    tags: ["HTML Email", "Responsive"],
     rotation: -3,
     category: "html-email",
-    image: "/email-templates/starseed-welcome/preview.svg",
-    imageClassName: "object-cover",
-    summary: "A polished onboarding email concept for Starseed focused on high-contrast visuals, soft glassmorphism, and a clear activation CTA.",
+    href: "/email-templates/starseed-welcome-email/",
+    summary: "A responsive HTML welcome email built with email-safe structure, CTA sections, and mobile-friendly spacing.",
     features: [
-      "Standalone hosted template served from the portfolio site",
-      "Live inline preview available from the project modal",
-      "Structured hero, CTA block, onboarding steps, and footer content"
+      "Responsive structure for mobile viewing",
+      "Strong CTA for onboarding flow",
+      "inline CSS styling for email client compatibility",
     ],
-    href: "/email-templates/starseed-welcome/",
-    previewUrl: "/email-templates/starseed-welcome/",
     links: [
-      { label: "Open hosted template", url: "/email-templates/starseed-welcome/" },
-    ],
+      {label: "Visit project", url: "/public/email-templates/starseed-welcome-email/"},
+      {label: "View code", url: "https://github.com/ImaniTechDiary/Starseed-Email"}
+    ]
   },
-  {
-    id: 6,
-    title: "Social Media Clone",
-    description: "Feature-rich social platform with real-time updates and messaging.",
-    tags: ["Full Stack", "WebSocket", "Auth"],
-    rotation: -3,
-    category: "full-stack",
-    summary: "A social feed concept with live updates, messaging, and identity-aware interactions.",
-    features: [
-      "Real-time post and chat events",
-      "Authentication and profile-aware feeds",
-      "Scalable full-stack architecture patterns",
-    ],
-  },
-  {
-    id: 7,
-    title: "AI Chat Assistant",
-    description: "Intelligent conversational interface powered by machine learning.",
-    tags: ["AI", "Python", "NLP"],
-    rotation: 1,
-    category: "full-stack",
-    summary: "An assistant interface focused on natural conversation, context carry-over, and practical AI outputs.",
-    features: [
-      "Conversational prompt orchestration",
-      "Context handling for more coherent responses",
-      "Extensible architecture for tool integrations",
-    ],
-  },
+  // {
+  //   id: 5,
+  //   title: "Social Media Clone",
+  //   description: "Feature-rich social platform with real-time updates and messaging.",
+  //   tags: ["Full Stack", "WebSocket", "Auth"],
+  //   rotation: -3,
+  //   category: "full-stack",
+  //   summary: "A social feed concept with live updates, messaging, and identity-aware interactions.",
+  //   features: [
+  //     "Real-time post and chat events",
+  //     "Authentication and profile-aware feeds",
+  //     "Scalable full-stack architecture patterns",
+  //   ],
+  // },
+  // {
+  //   id: 6,
+  //   title: "AI Chat Assistant",
+  //   description: "Intelligent conversational interface powered by machine learning.",
+  //   tags: ["AI", "Python", "NLP"],
+  //   rotation: 1,
+  //   category: "full-stack",
+  //   summary: "An assistant interface focused on natural conversation, context carry-over, and practical AI outputs.",
+  //   features: [
+  //     "Conversational prompt orchestration",
+  //     "Context handling for more coherent responses",
+  //     "Extensible architecture for tool integrations",
+  //   ],
+  // },
 ];
 
 const Projects = () => {
-  const starseedTemplateUrl = `${import.meta.env.BASE_URL}email-templates/starseed-welcome/`;
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<"all" | ProjectItem["category"]>("all");
-
-  const portfolioProjects = projects.map((project) =>
-    project.title === "Starseed Welcome Email"
-      ? {
-          ...project,
-          href: starseedTemplateUrl,
-          previewUrl: starseedTemplateUrl,
-          links: [{ label: "Open hosted template", url: starseedTemplateUrl }],
-        }
-      : project,
-  );
 
   const filterLinks: Array<{
     label: string;
@@ -215,7 +201,7 @@ const Projects = () => {
     },
   ];
 
-  const filteredProjects = portfolioProjects.filter((project) => {
+  const filteredProjects = projects.filter((project) => {
     if (activeFilter === "all") return true;
     return project.category === activeFilter;
   });

@@ -7,6 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   // ** REQUIRED FOR GITHUB PAGES TO SHOW CONTENT ON WEBPAGE INSTEAD OF A WHITE PAGE
   base: "https://imanitechdiary.github.io/",
+  // base: "/",
   server: {
     host: "::",
     port: 8080,

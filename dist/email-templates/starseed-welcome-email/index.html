@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Starseed - Welcome Email</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* background: #06060e; */
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+            color: #fff;
+        }
+
+        .canvas {
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, #693ba1 0%, #1f1f48 70%);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            border: solid 1px rgba(255,255,255,0.0.6);
+        }
+
+        /* orb design */
+        .orb {
+            position: absolute;
+        border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(138, 43, 226, 0.25);
+            top: -80px;
+            left: -60px;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(0, 200, 255, 0.12);
+            top: 40px;
+            right: -40px;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 60, 120, 0.1);
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        /* Header */
+        .header {
+            position: relative;
+            z-index: 1;
+            padding: 40px 48px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #a855f7;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 100px;
+            padding: 4px 12px;
+        }
+        .badge:hover {
+            color:#fff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            z-index: 1;
+            padding: 0 48px 40px;
+        }
+
+        .hero-eyebrow {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, #a855f7, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-body {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 420px;
+            margin-bottom: 36px;
+        }
+
+        /* Glass card CTA */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px 32px;
+            backdrop-filter: blur(12px);
+            margin-bottom: 40px;
+        }
+
+        .glass-card p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 16px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.35);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            margin-left: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 13px;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+
+        .btn-secondary:hover {
+            color: #fff;
+        }
+
+
+        /* Steps */
+        .steps {
+            position: relative;
+            z-index: 1;
+            padding: 0 48px;
+            margin-bottom: 48px;
+        }
+
+        .steps-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+            margin-bottom: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding-left: 40px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #a855f7;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+            
+        .step-text strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2px;
+        }
+
+        .step-text span {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.05);
+            margin: 48px 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Footer */
+        .footer {
+            position: relative;
+            z-index: 1;
+            padding: 18px 40px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class='canvas'>
+        <div class='orb orb-1'></div>
+        <div class='orb orb-2'></div>
+        <div class='orb orb-3'></div>
+
+        <!-- Header -->
+        <div class='header'>
+            <div class='logo'>Starseed</div>
+            <div class='badge'>Welcome</div>
+        </div>
+
+        <!-- Hero -->
+        <div class='hero'>
+            <p class='hero-top'>You're in ✦</p>
+            <h1 class='hero-title'>Hello,<br/><span class='accentName'>Jane Smith</span></h1>
+            <p class='hero-body'>
+                Your account is live and ready. You've just joined a space built for the next generation of 
+                creators! Welcome to something different.
+            </p>
+
+            <div class='glass-card'>
+                <p>Your workspace is waiting. Start exploring what's possible.</p>
+                <a href="#" class='btn-primary'>Launch Dashboard</a>
+                <a href="#" class='btn-secondary'>Take the tour</a>
+            </div>
+        </div>
+
+
+        <!-- Steps -->
+        <div class='step'>
+            <div class='step-num'>1</div>
+            <div class='step-text'>
+                <strong>Complete your profile</strong>
+                <span>Add a photo and your preferences to personalize your experience.</span>
+            </div>
+        </div>
+
+        <div class='step'>
+            <div class='step-num'>2</div>
+            <div class='step-text'>
+                <strong>Connect your tools</strong>
+                <span>Integrate the apps you already use in one click.</span>
+            </div>
+        </div>
+
+        <div class='step'>
+            <div class='step-num'>3</div>
+            <div class='step-text'>
+                <strong>Invite your team</strong>
+                <span>Collaboration is better together - your first 5 seats are free.</span>
+            </div>
+        </div>
+
+        <div class='divider'></div>
+
+
+        <!-- Footer -->
+        <div class='footer'>
+            <p>Nova Inc. 123 Smiley Lane, San Francisco, CA 94104</p>
+            <p><a href="#">Unsubscribe</a> &nbsp; &nbsp; <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>

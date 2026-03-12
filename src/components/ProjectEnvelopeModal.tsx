@@ -11,7 +11,6 @@ export interface ProjectModalContent {
   summary?: string;
   features?: string[];
   links?: ProjectDetailLink[];
-  previewUrl?: string;
   videoUrl?: string;
 }
 
@@ -149,19 +148,6 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
                       {link.label}
                     </a>
                   ))}
-                </div>
-              </div>
-            ) : null}
-
-            {project.previewUrl ? (
-              <div className="mt-6">
-                <h4 className="text-sm font-semibold font-mono uppercase tracking-wide text-foreground">Live Preview</h4>
-                <div className="mt-2 overflow-hidden rounded-lg border-2 border-rose-200 bg-white">
-                  <iframe
-                    src={project.previewUrl}
-                    title={`${project.title} live preview`}
-                    className="h-[620px] w-full"
-                  />
                 </div>
               </div>
             ) : null}
