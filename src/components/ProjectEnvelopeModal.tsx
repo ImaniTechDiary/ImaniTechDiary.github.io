@@ -11,6 +11,7 @@ export interface ProjectModalContent {
   summary?: string;
   features?: string[];
   links?: ProjectDetailLink[];
+  previewUrl?: string;
   videoUrl?: string;
 }
 
@@ -73,7 +74,7 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
   const embedUrl = toEmbedUrl(project.videoUrl);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 pt-20 md:p-6 md:pt-24">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4 md:p-6">
       <button
         type="button"
         aria-label="Close modal"
@@ -148,6 +149,19 @@ const ProjectEnvelopeModal = ({ isOpen, project, onClose }: ProjectEnvelopeModal
                       {link.label}
                     </a>
                   ))}
+                </div>
+              </div>
+            ) : null}
+
+            {project.previewUrl ? (
+              <div className="mt-6">
+                <h4 className="text-sm font-semibold font-mono uppercase tracking-wide text-foreground">Live Preview</h4>
+                <div className="mt-2 overflow-hidden rounded-lg border-2 border-rose-200 bg-white">
+                  <iframe
+                    src={project.previewUrl}
+                    title={`${project.title} live preview`}
+                    className="h-[620px] w-full"
+                  />
                 </div>
               </div>
             ) : null}

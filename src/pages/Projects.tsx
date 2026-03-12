@@ -39,7 +39,7 @@ const projects: ProjectItem[] = [
     summary: "YemAP is a full-stack accounts payable workflow app focused on vendor and invoice operations with role-based review/approval, tailored for legal/operations teams.",
     features: [
       "Role-based dashboards: Admin, Accountant, Attorney, Clerk",
-      "Vendor + Invoice management: CRUD operations",
+      "Vendor & Invoice management: CRUD operations",
       "Live search functionality for both vendors and invoices",
     ],
     links: [
@@ -50,7 +50,7 @@ const projects: ProjectItem[] = [
     id: 2,
     title: "MUNYUN",
     description: "",
-    tags: ["React + React Router", "MongoDB", "Firebase Auth"],
+    tags: ["React & React Router", "MongoDB", "Firebase Auth"],
     rotation: 3,
     category: "full-stack",
     image: "/Munyun-logo.png",
@@ -104,11 +104,13 @@ const projects: ProjectItem[] = [
     image: "ReadABookOrSomethingMainLogo.png",
     imageClassName: "object-contain p-0 w-[95%] h-auto max-w-none",
     href: "https://readabookorsomething.pages.dev/",
-    summary: "A collaborative kanban workflow tool built for planning and execution across teams.",
+    summary: "A reading platform that combines public-domain book discovery, in-app reading, and annotation workflows with authentication.",
     features: [
-      "Drag-and-drop board interactions",
-      "Task ownership and progress visibility",
-      "Cloud-ready backend integration",
+      "Library management (add/remove books, track reading status)",
+      "Dashboard & notes management views for user reading insights",
+      "JWT authentication",
+      "Public-domain book search integration (Gutendex-focused production path)",
+      "Chapter navigation & click-to-jump annotation navigation for highlighted passages"
     ],
     links: [
       { label: "Visit project", url: "https://readabookorsomething.pages.dev/" },
@@ -116,6 +118,27 @@ const projects: ProjectItem[] = [
   },
   {
     id: 5,
+    title: "Starseed Welcome Email",
+    description: "Hosted HTML email concept with a live preview embedded directly in the portfolio.",
+    tags: ["HTML Email", "Responsive CSS", "Email Design"],
+    rotation: -3,
+    category: "html-email",
+    image: "/email-templates/starseed-welcome/preview.svg",
+    imageClassName: "object-cover",
+    summary: "A polished onboarding email concept for Starseed focused on high-contrast visuals, soft glassmorphism, and a clear activation CTA.",
+    features: [
+      "Standalone hosted template served from the portfolio site",
+      "Live inline preview available from the project modal",
+      "Structured hero, CTA block, onboarding steps, and footer content"
+    ],
+    href: "/email-templates/starseed-welcome/",
+    previewUrl: "/email-templates/starseed-welcome/",
+    links: [
+      { label: "Open hosted template", url: "/email-templates/starseed-welcome/" },
+    ],
+  },
+  {
+    id: 6,
     title: "Social Media Clone",
     description: "Feature-rich social platform with real-time updates and messaging.",
     tags: ["Full Stack", "WebSocket", "Auth"],
@@ -129,7 +152,7 @@ const projects: ProjectItem[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "AI Chat Assistant",
     description: "Intelligent conversational interface powered by machine learning.",
     tags: ["AI", "Python", "NLP"],
@@ -145,8 +168,20 @@ const projects: ProjectItem[] = [
 ];
 
 const Projects = () => {
+  const starseedTemplateUrl = `${import.meta.env.BASE_URL}email-templates/starseed-welcome/`;
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<"all" | ProjectItem["category"]>("all");
+
+  const portfolioProjects = projects.map((project) =>
+    project.title === "Starseed Welcome Email"
+      ? {
+          ...project,
+          href: starseedTemplateUrl,
+          previewUrl: starseedTemplateUrl,
+          links: [{ label: "Open hosted template", url: starseedTemplateUrl }],
+        }
+      : project,
+  );
 
   const filterLinks: Array<{
     label: string;
@@ -180,7 +215,7 @@ const Projects = () => {
     },
   ];
 
-  const filteredProjects = projects.filter((project) => {
+  const filteredProjects = portfolioProjects.filter((project) => {
     if (activeFilter === "all") return true;
     return project.category === activeFilter;
   });
