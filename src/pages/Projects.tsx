@@ -118,12 +118,12 @@ const projects: ProjectItem[] = [
   },
   {
     id: 5,
-    title: "Welcome Email Template",
-    description: "A responsive onboarding email template.",
+    title: "Starseed Email",
+    description: "A responsive welcome / onboarding email template.",
     tags: ["HTML Email", "Responsive"],
     rotation: -3,
     category: "html-email",
-    href: "/email-templates/starseed-welcome-email/",
+    href: "https://imanitechdiary.github.io/email-templates/starseed-welcome-email/",
     summary: "A responsive HTML welcome email built with email-safe structure, CTA sections, and mobile-friendly spacing.",
     features: [
       "Responsive structure for mobile viewing",
@@ -131,7 +131,7 @@ const projects: ProjectItem[] = [
       "inline CSS styling for email client compatibility",
     ],
     links: [
-      {label: "Visit project", url: "/email-templates/starseed-welcome-email/"},
+      {label: "Visit project", url: "https://imanitechdiary.github.io/email-templates/starseed-welcome-email/"},
       {label: "View code", url: "https://github.com/ImaniTechDiary/Starseed-Email"}
     ]
   },
@@ -287,7 +287,7 @@ const Projects = () => {
           )}
         </div>
         
-        {/* Bottom decorative text */}
+        {/* Bottom decorative text
         <div className="mt-16 flex items-center justify-center gap-3 text-center">
           <span className="text-base text-primary font-semibold font-mono italic">
             "Get in loser, we're building apps"
@@ -297,7 +297,7 @@ const Projects = () => {
             alt="Pink car"
             className="w-16 h-auto opacity-90"
           />
-        </div>
+        </div> */}
       </main>
 
       <ProjectEnvelopeModal

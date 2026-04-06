@@ -91,9 +91,9 @@ const Index = () => {
           <Button size="lg" className="font-semibold shadow-lg" asChild>
             <Link to="/projects">View Projects</Link>
           </Button>
-          <Button variant="outline" size="lg" className="font-semibold" asChild>
+          {/* <Button variant="outline" size="lg" className="font-semibold" asChild>
             <Link to="/contact">Get In Touch</Link>
-          </Button>
+          </Button> */}
         </div>
 
         {/* Scroll Indicator */}

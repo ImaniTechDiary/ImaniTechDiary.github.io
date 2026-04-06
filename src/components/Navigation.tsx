@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/imani-wells/";
 
 const Navigation = () => {
   const navItems = [
     { label: "Home", path: "/" },
     { label: "Projects", path: "/projects" },
-    { label: "About", path: "/about" },
-    { label: "Contact", path: "/contact" },
+    // { label: "About", path: "/about" },
+    // { label: "Contact", path: "/contact" },
   ];
 
   return (
@@ -27,6 +30,21 @@ const Navigation = () => {
               <Link to={item.path}>{item.label}</Link>
             </Button>
           ))}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-primary hover:text-primary hover:bg-accent"
+            asChild
+          >
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" strokeWidth={1.9} />
+            </a>
+          </Button>
         </div>
       </div>
     </nav>
