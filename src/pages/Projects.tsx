@@ -76,26 +76,6 @@ const projects: ProjectItem[] = [
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "Creative developer portfolio with unique animations and interactions.",
-    tags: ["Design", "CSS", "Animation"],
-    rotation: -1,
-    category: "landing-page",
-    image: "/ITD-logo.png",
-    imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
-    href: "https://imanitechdiary.github.io/",
-    summary: "A personality-driven portfolio focused on visual storytelling, motion, and project highlights.",
-    features: [
-      "Custom visual theme with scrapbook-inspired components",
-      "Project-first information architecture",
-      "Reusable React components for quick iteration",
-    ],
-    links: [
-      { label: "Portfolio", url: "https://imanitechdiary.github.io/" },
-    ],
-  },
-  {
-    id: 4,
     title: "ReadABookOrSomething",
     description: "Kanban-style productivity tool with drag-and-drop and team collaboration.",
     tags: ["React", "DnD", "Firebase"],
@@ -114,6 +94,26 @@ const projects: ProjectItem[] = [
     ],
     links: [
       { label: "Visit project", url: "https://readabookorsomething.pages.dev/" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Portfolio Website",
+    description: "Creative developer portfolio with unique animations and interactions.",
+    tags: ["Design", "CSS", "Animation"],
+    rotation: -1,
+    category: "landing-page",
+    image: "/ITD-logo.png",
+    imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
+    href: "https://imanitechdiary.github.io/",
+    summary: "A personality-driven portfolio focused on visual storytelling, motion, and project highlights.",
+    features: [
+      "Custom visual theme with scrapbook-inspired components",
+      "Project-first information architecture",
+      "Reusable React components for quick iteration",
+    ],
+    links: [
+      { label: "Portfolio", url: "https://imanitechdiary.github.io/" },
     ],
   },
   {
