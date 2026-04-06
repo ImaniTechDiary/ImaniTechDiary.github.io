@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/imani-wells/";
+const GITHUB_URL = "https://github.com/ImaniTechDiary";
 
 const Navigation = () => {
   const navItems = [
@@ -24,7 +25,7 @@ const Navigation = () => {
               key={item.label}
               variant="ghost"
               size="sm"
-              className="text-foreground hover:text-primary hover:bg-accent"
+              className="text-primary hover:text-primary hover:bg-accent"
               asChild
             >
               <Link to={item.path}>{item.label}</Link>
@@ -43,6 +44,21 @@ const Navigation = () => {
               aria-label="LinkedIn"
             >
               <Linkedin className="h-4 w-4" strokeWidth={1.9} />
+            </a>
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-primary hover:text-primary hover:bg-accent"
+            asChild
+          >
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <Github className="h-4 w-4" strokeWidth={1.9} />
             </a>
           </Button>
         </div>
