@@ -123,6 +123,8 @@ const projects: ProjectItem[] = [
     tags: ["HTML Email", "Responsive"],
     rotation: -3,
     category: "html-email",
+    image: "/Starseed-logo.png",
+    imageClassName: "object-contain p-0.5 w-[95%] h-auto mx-auto",
     href: "https://imanitechdiary.github.io/email-templates/starseed-welcome-email/",
     summary: "A responsive HTML welcome email built with email-safe structure, CTA sections, and mobile-friendly spacing.",
     features: [
