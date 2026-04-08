@@ -1,7 +1,7 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import defaultHelloKitty from "@/assets/Hello Kitty Mani.png";
 
-type HeroPhase = "idle" | "entering" | "perched" | "burst" | "done";
+type HeroPhase = "idle" | "entering" | "perched" | "burst" | "wave" | "done";
 
 interface FloatingHelloKittyHeroProps {
   imageSrc?: string;
@@ -11,9 +11,10 @@ interface FloatingHelloKittyHeroProps {
   rightOffset?: string | number;
 }
 
-const ENTER_DURATION_MS = 2500;
+const ENTER_DURATION_MS = 3400;
 const PERCH_DURATION_MS = 700;
-const BURST_DURATION_MS = 1100;
+const BURST_DURATION_MS = 1325;
+const WAVE_DURATION_MS = 1200;
 
 const toCssValue = (value: string | number) =>
   typeof value === "number" ? `${value}px` : value;
@@ -50,7 +51,10 @@ const FloatingHelloKittyHero = ({
         timeoutRef.current = window.setTimeout(() => setPhase("burst"), PERCH_DURATION_MS);
         break;
       case "burst":
-        timeoutRef.current = window.setTimeout(() => setPhase("done"), BURST_DURATION_MS);
+        timeoutRef.current = window.setTimeout(() => setPhase("wave"), BURST_DURATION_MS);
+        break;
+      case "wave":
+        timeoutRef.current = window.setTimeout(() => setPhase("done"), WAVE_DURATION_MS);
         break;
       default:
         timeoutRef.current = null;

@@ -530,11 +530,12 @@ All colors MUST be HSL.
 .floating-hello-kitty-hero[data-phase="entering"] .floating-hello-kitty-hero__character,
 .floating-hello-kitty-hero[data-phase="perched"] .floating-hello-kitty-hero__character,
 .floating-hello-kitty-hero[data-phase="burst"] .floating-hello-kitty-hero__character,
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__character,
 .floating-hello-kitty-hero[data-phase="done"] .floating-hello-kitty-hero__character {
   transform: translateY(0) rotate(-1.25deg);
   opacity: 1;
   transition:
-    transform 2500ms cubic-bezier(0.22, 0.8, 0.24, 1),
+    transform 3400ms cubic-bezier(0.2, 0.86, 0.22, 1),
     opacity 420ms ease;
 }
 
@@ -804,6 +805,7 @@ All colors MUST be HSL.
 
 .floating-hello-kitty-hero[data-phase="perched"] .floating-hello-kitty-hero__seat-shadow,
 .floating-hello-kitty-hero[data-phase="burst"] .floating-hello-kitty-hero__seat-shadow,
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__seat-shadow,
 .floating-hello-kitty-hero[data-phase="done"] .floating-hello-kitty-hero__seat-shadow {
   opacity: 1;
 }
@@ -831,12 +833,27 @@ All colors MUST be HSL.
   opacity: 1;
 }
 
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__balloons,
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__confetti-cloud {
+  opacity: 0;
+  transform: translateY(-2.2rem) scale(0.2);
+}
+
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__diary-key {
+  opacity: 0;
+}
+
 .floating-hello-kitty-hero[data-phase="burst"] .floating-hello-kitty-hero__diary-key {
   animation: hero-kitty-key-drop 1.18s cubic-bezier(0.2, 0.82, 0.2, 1) forwards;
 }
 
 .floating-hello-kitty-hero[data-phase="done"] .floating-hello-kitty-hero__diary-key {
   transform: translate(0, 0) rotate(-10deg) scale(1);
+}
+
+.floating-hello-kitty-hero[data-phase="wave"] .floating-hello-kitty-hero__image {
+  animation: hero-kitty-wave 1200ms ease-in-out 1;
+  transform-origin: center 68%;
 }
 
 .floating-hello-kitty-hero[data-phase="burst"] .floating-hello-kitty-hero__diary-key::before {
@@ -955,6 +972,24 @@ All colors MUST be HSL.
   }
   50% {
     transform: translateY(-3px) rotate(0.4deg);
+  }
+}
+
+@keyframes hero-kitty-wave {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  18% {
+    transform: rotate(-4deg) translateY(-1px);
+  }
+  38% {
+    transform: rotate(2deg) translateY(0);
+  }
+  58% {
+    transform: rotate(-5deg) translateY(-1px);
+  }
+  78% {
+    transform: rotate(2deg) translateY(0);
   }
 }
 
