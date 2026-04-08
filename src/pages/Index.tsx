@@ -14,10 +14,26 @@ import { Laptop } from "lucide-react";
 import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
-  const [isProjectsButtonHovered, setIsProjectsButtonHovered] = useState(false);
+  const [isInteractiveKeyHover, setIsInteractiveKeyHover] = useState(false);
+
+  const updateInteractiveHover = (target: EventTarget | null) => {
+    const element = target instanceof Element ? target : null;
+    setIsInteractiveKeyHover(Boolean(element?.closest(".home-projects-button, .book-nav a")));
+  };
 
   return (
-    <div className="min-h-full bg-background overflow-hidden relative">
+    <div
+      className="min-h-full bg-background overflow-hidden relative"
+      onMouseOver={(event) => updateInteractiveHover(event.target)}
+      onMouseOut={(event) => {
+        const nextTarget =
+          event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)
+            ? event.relatedTarget
+            : null;
+
+        updateInteractiveHover(nextTarget);
+      }}
+    >
       <Navigation />
       <ScrapbookBackground />
       
@@ -96,10 +112,6 @@ const Index = () => {
           <Button
             size="lg"
             className="home-projects-button font-semibold shadow-lg"
-            onMouseEnter={() => setIsProjectsButtonHovered(true)}
-            onMouseLeave={() => setIsProjectsButtonHovered(false)}
-            onFocus={() => setIsProjectsButtonHovered(true)}
-            onBlur={() => setIsProjectsButtonHovered(false)}
             asChild
           >
             <Link to="/projects">View Projects</Link>
@@ -121,7 +133,7 @@ const Index = () => {
         size="clamp(92px, 10vw, 138px)"
         bottomOffset="clamp(2.8rem, 10vw, 5.1rem)"
         rightOffset="clamp(4.4rem, 8vw, 7.4rem)"
-        hideFloorKey={isProjectsButtonHovered}
+        hideFloorKey={isInteractiveKeyHover}
       />
 
       {/* Decorative Quote */}

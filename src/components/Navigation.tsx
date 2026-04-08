@@ -28,7 +28,9 @@ const Navigation = () => {
               className="text-primary hover:text-primary hover:bg-accent"
               asChild
             >
-              <Link to={item.path}>{item.label}</Link>
+              <Link to={item.path} className="nav-text-link">
+                {item.label}
+              </Link>
             </Button>
           ))}
           <Button
@@ -42,6 +44,7 @@ const Navigation = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
+              className="nav-icon-link"
             >
               <Linkedin className="h-4 w-4" strokeWidth={1.9} />
             </a>
@@ -57,6 +60,7 @@ const Navigation = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
+              className="nav-icon-link"
             >
               <Github className="h-4 w-4" strokeWidth={1.9} />
             </a>
