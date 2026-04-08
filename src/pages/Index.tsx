@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CutoutTitle from "@/components/CutoutTitle";
@@ -13,6 +14,8 @@ import { Laptop } from "lucide-react";
 import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
+  const [isProjectsButtonHovered, setIsProjectsButtonHovered] = useState(false);
+
   return (
     <div className="min-h-full bg-background overflow-hidden relative">
       <Navigation />
@@ -90,7 +93,15 @@ const Index = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-          <Button size="lg" className="font-semibold shadow-lg" asChild>
+          <Button
+            size="lg"
+            className="home-projects-button font-semibold shadow-lg"
+            onMouseEnter={() => setIsProjectsButtonHovered(true)}
+            onMouseLeave={() => setIsProjectsButtonHovered(false)}
+            onFocus={() => setIsProjectsButtonHovered(true)}
+            onBlur={() => setIsProjectsButtonHovered(false)}
+            asChild
+          >
             <Link to="/projects">View Projects</Link>
           </Button>
           {/* <Button variant="outline" size="lg" className="font-semibold" asChild>
@@ -110,6 +121,7 @@ const Index = () => {
         size="clamp(92px, 10vw, 138px)"
         bottomOffset="clamp(2.8rem, 10vw, 5.1rem)"
         rightOffset="clamp(4.4rem, 8vw, 7.4rem)"
+        hideFloorKey={isProjectsButtonHovered}
       />
 
       {/* Decorative Quote */}

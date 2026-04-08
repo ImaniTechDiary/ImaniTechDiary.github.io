@@ -9,6 +9,7 @@ interface FloatingHelloKittyHeroProps {
   topOffset?: string | number;
   bottomOffset?: string | number;
   rightOffset?: string | number;
+  hideFloorKey?: boolean;
 }
 
 const ENTER_DURATION_MS = 3400;
@@ -25,6 +26,7 @@ const FloatingHelloKittyHero = ({
   topOffset,
   bottomOffset,
   rightOffset = "clamp(-1.1rem, 1vw, 0.2rem)",
+  hideFloorKey = false,
 }: FloatingHelloKittyHeroProps) => {
   const [phase, setPhase] = useState<HeroPhase>("idle");
   const timeoutRef = useRef<number | null>(null);
@@ -85,6 +87,7 @@ const FloatingHelloKittyHero = ({
       aria-hidden="true"
       className="floating-hello-kitty-hero"
       data-phase={phase}
+      data-hide-floor-key={hideFloorKey ? "true" : "false"}
       style={style}
     >
       <div className="floating-hello-kitty-hero__character">
