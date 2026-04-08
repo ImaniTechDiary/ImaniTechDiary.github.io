@@ -7,6 +7,8 @@ import KissMarkDecoration from "@/components/KissMarkDecoration";
 import Navigation from "@/components/Navigation";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
 import TypewriterText from "@/components/TypewriterText";
+import FloatingHelloKittyHero from "@/components/FloatingHelloKittyHero";
+import helloKittyMani from "@/assets/Hello Kitty Mani.png";
 import { Laptop } from "lucide-react";
 import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
@@ -102,6 +104,13 @@ const Index = () => {
           <ArrowDown size={20} />
         </div> */}
       </main>
+
+      <FloatingHelloKittyHero
+        imageSrc={helloKittyMani}
+        size="clamp(92px, 10vw, 138px)"
+        bottomOffset="clamp(2.8rem, 10vw, 5.1rem)"
+        rightOffset="clamp(4.4rem, 8vw, 7.4rem)"
+      />
 
       {/* Decorative Quote */}
       <div className="absolute bottom-4 right-4 md:right-8 text-xs md:text-sm text-muted-foreground font-mono italic opacity-60">
