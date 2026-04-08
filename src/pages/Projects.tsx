@@ -6,6 +6,8 @@ import KissMarkDecoration from "@/components/KissMarkDecoration";
 import CutoutTitle from "@/components/CutoutTitle";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectEnvelopeModal, { ProjectModalContent } from "@/components/ProjectEnvelopeModal";
+import WalkingHelloKitty from "@/components/WalkingHelloKitty";
+import helloKittyMani from "@/assets/Hello Kitty Mani.png";
 
 // Sample projects data - easy to add more!
 interface ProjectItem extends ProjectModalContent {
@@ -224,7 +226,7 @@ const Projects = () => {
       <KissMarkDecoration className="bottom-32 left-12" size="sm" rotation={-25} opacity={0.15} />
       
       {/* Main Content */}
-      <main className="relative z-10 min-h-full px-4 md:px-8 pt-24 pb-16">
+      <main id="projects-section" className="relative z-10 min-h-full px-4 md:px-8 pt-24 pb-16">
         {/* Page Title */}
         <div className="text-center -mt-10 mb-[5.5rem]">
           <div className="inline-block relative">
@@ -264,6 +266,14 @@ const Projects = () => {
             })}
           </div>
         </div>
+
+        <WalkingHelloKitty
+          imageSrc={helloKittyMani}
+          triggerId="projects-section"
+          stopPosition="calc(100% - clamp(7.75rem, 15vw, 10rem))"
+          size="clamp(88px, 11vw, 138px)"
+          bottom="clamp(10px, 2.3vw, 18px)"
+        />
         
         {/* Projects Grid - Collage Style */}
         <div id="projects-grid" className="max-w-6xl mx-auto">
