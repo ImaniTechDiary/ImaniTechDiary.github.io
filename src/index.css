@@ -177,6 +177,7 @@ All colors MUST be HSL.
 .book-stage {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,8 +186,9 @@ All colors MUST be HSL.
 
 .book-frame {
   position: absolute;
-  width: min(94vw, 1160px);
-  height: min(88vh, 780px);
+  width: min(92vw, 1100px, calc((100dvh - clamp(36px, 7vw, 88px)) * 1.447));
+  aspect-ratio: 1100 / 760;
+  max-height: calc(100dvh - clamp(32px, 6vw, 80px));
   z-index: 0;
   left: 50%;
   top: 50%;
@@ -292,8 +294,9 @@ All colors MUST be HSL.
 
 .book-content {
   position: relative;
-  width: min(90vw, 1080px);
-  height: min(82vh, 720px);
+  width: min(88vw, 1020px, calc((100dvh - clamp(72px, 9vw, 132px)) * 1.457));
+  aspect-ratio: 1020 / 700;
+  max-height: calc(100dvh - clamp(56px, 8vw, 120px));
   z-index: 1;
   border-radius: 26px;
   background: hsl(var(--background));
@@ -305,6 +308,18 @@ All colors MUST be HSL.
   scrollbar-width: thin;
   scrollbar-color: hsl(330 90% 60% / 0.9) transparent;
   -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+  .book-frame {
+    width: 94vw;
+    max-height: min(78dvh, 700px);
+  }
+
+  .book-content {
+    width: 91vw;
+    max-height: min(72dvh, 640px);
+  }
 }
 
 .book-content .book-nav {
@@ -1256,7 +1271,7 @@ All colors MUST be HSL.
   .book-frame,
   .book-content {
     width: 94vw;
-    height: 86vh;
+    max-height: min(84dvh, 720px);
     border-radius: 22px;
   }
 

@@ -54,17 +54,17 @@ const Index = () => {
       <KissMarkDecoration className="bottom-1/3 left-1/4" size="sm" rotation={45} opacity={0.2} />
       
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-full px-4 pt-16">
+      <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-14 pb-20 md:px-6 md:pt-16">
         {/* Binary Code Animation */}
         <div className="mb-8 text-center">
           <BinaryCode />
         </div>
 
         {/* Main Title - Cutout Style */}
-        <div className="mb-8 relative">
+        <div className="mb-8 relative w-full max-w-fit">
           <div className="absolute -inset-4 bg-accent/50 rounded-lg blur-xl" />
-          <div className="relative bg-card/90 backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-xl border-2 border-primary/30 flex items-center gap-1">
-            <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
+          <div className="relative flex items-center gap-1 rounded-lg border-2 border-primary/30 bg-card/90 p-4 shadow-xl backdrop-blur-sm md:p-8">
+            {/* <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
                 className="text-primary drop-shadow-lg md:w-16 md:h-16" 
@@ -76,9 +76,9 @@ const Index = () => {
                 strokeWidth={1.5}
                 fill="none"
               />
-            </div>
+            </div> */}
             <CutoutTitle text="Imani Tech Diary" size="xl" emphasizeFirstLetter />
-            <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
+            {/* <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
                 className="text-primary drop-shadow-lg md:w-16 md:h-16" 
@@ -90,7 +90,7 @@ const Index = () => {
                 strokeWidth={1.5}
                 fill="none"
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -108,7 +108,7 @@ const Index = () => {
         </p> */}
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+        <div className="mb-12 flex flex-col gap-4 sm:flex-row">
           <Button
             size="lg"
             className="home-projects-button font-semibold shadow-lg"
