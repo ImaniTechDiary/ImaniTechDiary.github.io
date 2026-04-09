@@ -7,11 +7,8 @@ import FloatingDoodle from "@/components/FloatingDoodle";
 import KissMarkDecoration from "@/components/KissMarkDecoration";
 import Navigation from "@/components/Navigation";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
-import TypewriterText from "@/components/TypewriterText";
 import FloatingHelloKittyHero from "@/components/FloatingHelloKittyHero";
 import helloKittyMani from "@/assets/Hello Kitty Mani.png";
-import { Laptop } from "lucide-react";
-import { ArrowDown, Sparkles, Heart } from "lucide-react";
 
 const Index = () => {
   const [isInteractiveKeyHover, setIsInteractiveKeyHover] = useState(false);
@@ -63,7 +60,7 @@ const Index = () => {
         {/* Main Title - Cutout Style */}
         <div className="mb-8 relative w-full max-w-fit">
           <div className="absolute -inset-4 bg-accent/50 rounded-lg blur-xl" />
-          <div className="relative flex items-center gap-1 rounded-lg border-2 border-primary/30 bg-card/90 p-4 shadow-xl backdrop-blur-sm md:p-8">
+          <div className="relative flex items-center gap-1 rounded-lg border-2 border-primary/30 bg-card/90 p-4 shadow-xl backdrop-blur-sm md:p-6">
             {/* <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
@@ -77,7 +74,7 @@ const Index = () => {
                 fill="none"
               />
             </div> */}
-            <CutoutTitle text="Imani Tech Diary" size="xl" emphasizeFirstLetter />
+            <CutoutTitle text="Imani Tech Diary" size="lg" emphasizeFirstLetter />
             {/* <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
