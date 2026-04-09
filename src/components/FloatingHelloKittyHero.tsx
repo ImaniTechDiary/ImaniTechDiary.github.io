@@ -1,5 +1,6 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import defaultHelloKitty from "@/assets/Hello Kitty Mani.png";
+import speechBubble from "@/assets/Speech-Bubble.png";
 
 type HeroPhase = "idle" | "entering" | "perched" | "burst" | "wave" | "done";
 
@@ -16,6 +17,14 @@ const ENTER_DURATION_MS = 3400;
 const PERCH_DURATION_MS = 700;
 const BURST_DURATION_MS = 1325;
 const WAVE_DURATION_MS = 1200;
+const HERO_BUBBLE_SHOW_MS = 2400;
+const HERO_BUBBLE_GAP_MS = 360;
+const HERO_HOVER_WARNINGS = [
+  "Don't click that!",
+  "I mean it!",
+  "I'm not playing with you!",
+  "Don't do it!",
+];
 
 const toCssValue = (value: string | number) =>
   typeof value === "number" ? `${value}px` : value;
@@ -29,7 +38,17 @@ const FloatingHelloKittyHero = ({
   hideFloorKey = false,
 }: FloatingHelloKittyHeroProps) => {
   const [phase, setPhase] = useState<HeroPhase>("idle");
+  const [bubbleMessage, setBubbleMessage] = useState("");
+  const [isBubbleVisible, setIsBubbleVisible] = useState(false);
   const timeoutRef = useRef<number | null>(null);
+  const bubbleSequenceRef = useRef<number[]>([]);
+  const lastHoverWarningRef = useRef<string | null>(null);
+  const wasHideFloorKeyRef = useRef(false);
+
+  const clearBubbleSequence = () => {
+    bubbleSequenceRef.current.forEach((timer) => window.clearTimeout(timer));
+    bubbleSequenceRef.current = [];
+  };
 
   useEffect(() => {
     const startTimer = window.setTimeout(() => {
@@ -69,6 +88,62 @@ const FloatingHelloKittyHero = ({
     };
   }, [phase]);
 
+  useEffect(() => {
+    if (phase !== "done") return;
+
+    const timers: number[] = [];
+
+    setBubbleMessage("Oh, hey! What are you doing here?");
+    setIsBubbleVisible(true);
+
+    timers.push(
+      window.setTimeout(() => {
+        setIsBubbleVisible(false);
+      }, HERO_BUBBLE_SHOW_MS),
+    );
+
+    timers.push(
+      window.setTimeout(() => {
+        setBubbleMessage("Don't go reading my diary!");
+        setIsBubbleVisible(true);
+      }, HERO_BUBBLE_SHOW_MS + HERO_BUBBLE_GAP_MS),
+    );
+
+    timers.push(
+      window.setTimeout(() => {
+        setIsBubbleVisible(false);
+      }, HERO_BUBBLE_SHOW_MS * 2 + HERO_BUBBLE_GAP_MS),
+    );
+
+    bubbleSequenceRef.current = timers;
+
+    return () => {
+      clearBubbleSequence();
+    };
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase !== "done") return;
+
+    if (hideFloorKey && !wasHideFloorKeyRef.current) {
+      clearBubbleSequence();
+      const availableWarnings = HERO_HOVER_WARNINGS.filter(
+        (warning) => warning !== lastHoverWarningRef.current,
+      );
+      const nextWarning =
+        availableWarnings[Math.floor(Math.random() * availableWarnings.length)] ??
+        HERO_HOVER_WARNINGS[0];
+
+      lastHoverWarningRef.current = nextWarning;
+      setBubbleMessage(nextWarning);
+      setIsBubbleVisible(true);
+    } else if (!hideFloorKey && bubbleMessage !== "" && HERO_HOVER_WARNINGS.includes(bubbleMessage)) {
+      setIsBubbleVisible(false);
+    }
+
+    wasHideFloorKeyRef.current = hideFloorKey;
+  }, [bubbleMessage, hideFloorKey, phase]);
+
   const style = {
     "--hero-kitty-size": toCssValue(size),
     "--hero-kitty-right": toCssValue(rightOffset),
@@ -91,6 +166,19 @@ const FloatingHelloKittyHero = ({
       style={style}
     >
       <div className="floating-hello-kitty-hero__character">
+        <div
+          className="floating-hello-kitty-hero__speech-bubble"
+          data-visible={isBubbleVisible ? "true" : "false"}
+        >
+          <img
+            src={speechBubble}
+            alt=""
+            className="floating-hello-kitty-hero__speech-bubble-image"
+            loading="eager"
+            decoding="async"
+          />
+          <div className="floating-hello-kitty-hero__speech-bubble-text">{bubbleMessage}</div>
+        </div>
         <div className="floating-hello-kitty-hero__confetti-cloud">
           <span className="floating-hello-kitty-hero__confetti floating-hello-kitty-hero__confetti--pink" />
           <span className="floating-hello-kitty-hero__confetti floating-hello-kitty-hero__confetti--black" />
