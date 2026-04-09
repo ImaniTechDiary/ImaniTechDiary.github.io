@@ -51,16 +51,16 @@ const Index = () => {
       <KissMarkDecoration className="bottom-1/3 left-1/4" size="sm" rotation={45} opacity={0.2} />
       
       {/* Main Content */}
-      <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-14 pb-20 md:px-6 md:pt-16">
+      <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-10 pb-14 md:px-6 md:pt-12 md:pb-16">
         {/* Binary Code Animation */}
-        <div className="mb-8 text-center">
-          <BinaryCode />
+        <div className="mb-5 text-center">
+          <BinaryCode className="text-[10px] md:text-xs tracking-[0.18em] md:tracking-[0.24em]" />
         </div>
 
         {/* Main Title - Cutout Style */}
-        <div className="mb-8 relative w-full max-w-fit">
+        <div className="mb-6 relative w-full max-w-fit">
           <div className="absolute -inset-4 bg-accent/50 rounded-lg blur-xl" />
-          <div className="relative flex items-center gap-1 rounded-lg border-2 border-primary/30 bg-card/90 p-4 shadow-xl backdrop-blur-sm md:p-6">
+          <div className="relative flex items-center gap-1 rounded-lg border-2 border-primary/30 bg-card/90 p-3 shadow-xl backdrop-blur-sm md:p-5">
             {/* <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
               <Laptop 
                 size={48} 
@@ -105,7 +105,7 @@ const Index = () => {
         </p> */}
 
         {/* CTA Buttons */}
-        <div className="mb-12 flex flex-col gap-4 sm:flex-row">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row">
           <Button
             size="lg"
             className="home-projects-button font-semibold shadow-lg"
@@ -128,13 +128,13 @@ const Index = () => {
       <FloatingHelloKittyHero
         imageSrc={helloKittyMani}
         size="clamp(92px, 10vw, 138px)"
-        bottomOffset="clamp(2.8rem, 10vw, 5.1rem)"
+        bottomOffset="clamp(1.2rem, 4vw, 2.6rem)"
         rightOffset="clamp(4.4rem, 8vw, 7.4rem)"
         hideFloorKey={isInteractiveKeyHover}
       />
 
       {/* Decorative Quote */}
-      <div className="absolute bottom-4 right-4 md:right-8 text-sm md:text-base text-primary font-black italic tracking-wide opacity-90 [text-shadow:1px_1px_0_rgba(255,255,255,0.9),3px_3px_0_rgba(255,45,139,0.18)] [webkit-text-stroke:0.6px_rgba(255,255,255,0.85)]">
+      <div className="absolute bottom-2 right-4 md:bottom-3 md:right-8 text-sm md:text-base text-primary font-black italic tracking-wide opacity-90 [text-shadow:1px_1px_0_rgba(255,255,255,0.9),3px_3px_0_rgba(255,45,139,0.18)] [webkit-text-stroke:0.6px_rgba(255,255,255,0.85)]">
         "The limit does not exist!"✨
       </div>
     </div>

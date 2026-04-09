@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-const BinaryCode = () => {
+interface BinaryCodeProps {
+  className?: string;
+}
+
+const BinaryCode = ({ className = "" }: BinaryCodeProps) => {
   const [displayText, setDisplayText] = useState("");
   const targetText = "That's So Mani";
   const binaryPhrase = "01010100 01101000 01100001 01110100 00100111 01110011 00100000 01010011 01101111 00100000 01001101 01100001 01101110 01101001"; // "That's So Mani" in binary
@@ -27,7 +31,7 @@ const BinaryCode = () => {
   }, []);
 
   return (
-    <div className="font-mono text-primary text-xs md:text-sm tracking-wider">
+    <div className={`font-mono text-primary tracking-wider ${className}`.trim()}>
       <span className="animate-pulse">{displayText}</span>
       <span className="animate-pulse">_</span>
     </div>
