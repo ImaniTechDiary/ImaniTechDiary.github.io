@@ -137,7 +137,7 @@ const Index = () => {
       />
 
       {/* Decorative Quote */}
-      <div className="absolute bottom-4 right-4 md:right-8 text-xs md:text-sm text-muted-foreground font-mono italic opacity-60">
+      <div className="absolute bottom-4 right-4 md:right-8 text-sm md:text-base text-primary font-black italic tracking-wide opacity-90 [text-shadow:1px_1px_0_rgba(255,255,255,0.9),3px_3px_0_rgba(255,45,139,0.18)] [webkit-text-stroke:0.6px_rgba(255,255,255,0.85)]">
         "The limit does not exist!"✨
       </div>
     </div>
