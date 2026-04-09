@@ -181,7 +181,7 @@ All colors MUST be HSL.
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(16px, 3vw, 40px);
+  padding: clamp(10px, 2vw, 28px);
 }
 
 .book-frame {

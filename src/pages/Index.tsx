@@ -51,7 +51,7 @@ const Index = () => {
       <KissMarkDecoration className="bottom-1/3 left-1/4" size="sm" rotation={45} opacity={0.2} />
       
       {/* Main Content */}
-      <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-10 pb-14 md:px-6 md:pt-12 md:pb-16">
+      <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-10 pb-10 md:px-6 md:pt-12 md:pb-12">
         {/* Binary Code Animation */}
         <div className="mb-5 text-center">
           <BinaryCode className="text-[9px] md:text-[11px] tracking-[0.12em] md:tracking-[0.18em]" />
@@ -134,7 +134,7 @@ const Index = () => {
       />
 
       {/* Decorative Quote */}
-      <div className="absolute bottom-2 right-4 md:bottom-3 md:right-8 text-sm md:text-base text-primary font-black italic tracking-wide opacity-90 [text-shadow:1px_1px_0_rgba(255,255,255,0.9),3px_3px_0_rgba(255,45,139,0.18)] [webkit-text-stroke:0.6px_rgba(255,255,255,0.85)]">
+      <div className="absolute bottom-1 right-4 md:bottom-2 md:right-8 text-sm md:text-base text-primary font-black italic tracking-wide opacity-90 [text-shadow:1px_1px_0_rgba(255,255,255,0.9),3px_3px_0_rgba(255,45,139,0.18)] [webkit-text-stroke:0.6px_rgba(255,255,255,0.85)]">
         "The limit does not exist!"✨
       </div>
     </div>
