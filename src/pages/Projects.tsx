@@ -235,7 +235,7 @@ const Projects = () => {
               <CutoutTitle text="My Projects" size="lg" />
             </div>
           </div>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-5">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-5">
             {filterLinks.map((filter) => {
               const isActive = activeFilter === filter.value;
 
@@ -249,8 +249,8 @@ const Projects = () => {
                   }}
                   aria-current={isActive ? "page" : undefined}
                   className={[
-                    "relative inline-flex items-center justify-center rounded-md border-2 px-4 py-2",
-                    "font-mono text-xs md:text-sm uppercase tracking-wide text-white shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
+                    "relative inline-flex items-center justify-center rounded-md border-2 px-3.5 py-2 md:px-4",
+                    "font-mono text-[11px] md:text-sm uppercase tracking-wide text-white shadow-[2px_3px_0_rgba(0,0,0,0.22)]",
                     "transition-all duration-200 hover:-translate-y-1.5 hover:scale-[1.08] hover:shadow-[5px_8px_0_rgba(214,52,129,0.42)]",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                     filter.stickerClassName,
@@ -270,9 +270,9 @@ const Projects = () => {
         <WalkingHelloKitty
           imageSrc={helloKittyMani}
           triggerId="projects-section"
-          stopPosition="calc(100% - clamp(5.75rem, 11vw, 7.75rem))"
-          size="clamp(88px, 11vw, 138px)"
-          bottom="clamp(10px, 2.3vw, 18px)"
+          stopPosition="calc(100% - clamp(3.75rem, 8vw, 5.25rem))"
+          size="clamp(72px, 8vw, 112px)"
+          bottom="clamp(8px, 1.8vw, 14px)"
         />
 
         {/* Projects Grid - Collage Style */}

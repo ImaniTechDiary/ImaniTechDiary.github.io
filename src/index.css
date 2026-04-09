@@ -186,8 +186,8 @@ All colors MUST be HSL.
 
 .book-frame {
   position: absolute;
-  width: min(92vw, 1100px, calc((100dvh - clamp(36px, 7vw, 88px)) * 1.447));
-  aspect-ratio: 1100 / 760;
+  width: min(95vw, 1180px);
+  height: clamp(640px, 80dvh, 760px);
   max-height: calc(100dvh - clamp(32px, 6vw, 80px));
   z-index: 0;
   left: 50%;
@@ -294,8 +294,8 @@ All colors MUST be HSL.
 
 .book-content {
   position: relative;
-  width: min(88vw, 1020px, calc((100dvh - clamp(72px, 9vw, 132px)) * 1.457));
-  aspect-ratio: 1020 / 700;
+  width: min(89vw, 1050px);
+  height: clamp(580px, 74dvh, 700px);
   max-height: calc(100dvh - clamp(56px, 8vw, 120px));
   z-index: 1;
   border-radius: 26px;
@@ -313,11 +313,13 @@ All colors MUST be HSL.
 @media (max-width: 1024px) {
   .book-frame {
     width: 94vw;
+    height: min(78dvh, 700px);
     max-height: min(78dvh, 700px);
   }
 
   .book-content {
-    width: 91vw;
+    width: 90vw;
+    height: min(72dvh, 640px);
     max-height: min(72dvh, 640px);
   }
 }
@@ -1271,6 +1273,7 @@ All colors MUST be HSL.
   .book-frame,
   .book-content {
     width: 94vw;
+    height: min(84dvh, 720px);
     max-height: min(84dvh, 720px);
     border-radius: 22px;
   }
