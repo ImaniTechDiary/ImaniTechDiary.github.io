@@ -54,7 +54,7 @@ const Index = () => {
       <main className="relative z-10 flex min-h-full w-full max-w-[980px] flex-col items-center justify-center px-4 pt-10 pb-14 md:px-6 md:pt-12 md:pb-16">
         {/* Binary Code Animation */}
         <div className="mb-5 text-center">
-          <BinaryCode className="text-[10px] md:text-xs tracking-[0.18em] md:tracking-[0.24em]" />
+          <BinaryCode className="text-[9px] md:text-[11px] tracking-[0.12em] md:tracking-[0.18em]" />
         </div>
 
         {/* Main Title - Cutout Style */}

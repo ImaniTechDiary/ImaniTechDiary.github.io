@@ -31,7 +31,9 @@ const BinaryCode = ({ className = "" }: BinaryCodeProps) => {
   }, []);
 
   return (
-    <div className={`font-mono text-primary tracking-wider ${className}`.trim()}>
+    <div
+      className={`w-full max-w-full overflow-hidden whitespace-nowrap text-center font-mono text-primary tracking-wider ${className}`.trim()}
+    >
       <span className="animate-pulse">{displayText}</span>
       <span className="animate-pulse">_</span>
     </div>
