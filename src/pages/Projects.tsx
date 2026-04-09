@@ -270,11 +270,11 @@ const Projects = () => {
         <WalkingHelloKitty
           imageSrc={helloKittyMani}
           triggerId="projects-section"
-          stopPosition="calc(100% - clamp(7.75rem, 15vw, 10rem))"
+          stopPosition="calc(100% - clamp(5.75rem, 11vw, 7.75rem))"
           size="clamp(88px, 11vw, 138px)"
           bottom="clamp(10px, 2.3vw, 18px)"
         />
-        
+
         {/* Projects Grid - Collage Style */}
         <div id="projects-grid" className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
