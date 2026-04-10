@@ -1,6 +1,7 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import defaultHelloKitty from "@/assets/Hello Kitty Mani.png";
 import speechBubble from "@/assets/Speech-Bubble.png";
+import retroTechBouquet from "@/assets/retro-tech-bouquet.png";
 
 type HeroPhase = "idle" | "entering" | "perched" | "burst" | "wave" | "done";
 
@@ -187,12 +188,13 @@ const FloatingHelloKittyHero = ({
           <span className="floating-hello-kitty-hero__confetti floating-hello-kitty-hero__confetti--gold-2" />
         </div>
         <div className="floating-hello-kitty-hero__balloons">
-          <span className="floating-hello-kitty-hero__string floating-hello-kitty-hero__string--one" />
-          <span className="floating-hello-kitty-hero__string floating-hello-kitty-hero__string--two" />
-          <span className="floating-hello-kitty-hero__string floating-hello-kitty-hero__string--three" />
-          <span className="floating-hello-kitty-hero__balloon floating-hello-kitty-hero__balloon--one" />
-          <span className="floating-hello-kitty-hero__balloon floating-hello-kitty-hero__balloon--two" />
-          <span className="floating-hello-kitty-hero__balloon floating-hello-kitty-hero__balloon--three" />
+          <img
+            src={retroTechBouquet}
+            alt=""
+            className="floating-hello-kitty-hero__bouquet"
+            loading="eager"
+            decoding="async"
+          />
         </div>
         <div className="floating-hello-kitty-hero__glow" />
         <div className="floating-hello-kitty-hero__seat-shadow" />

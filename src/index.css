@@ -765,85 +765,21 @@ All colors MUST be HSL.
 
 .floating-hello-kitty-hero__balloons {
   position: absolute;
-  right: 44%;
-  top: -47%;
-  width: 70%;
-  height: 78%;
+  right: 38%;
+  top: -60%;
+  width: 108%;
+  height: 118%;
   z-index: 74;
   transform-origin: bottom center;
 }
 
-.floating-hello-kitty-hero__balloon {
-  position: absolute;
-  width: 28%;
-  aspect-ratio: 0.9;
-  border-radius: 55% 55% 48% 48%;
-  box-shadow:
-    inset -8px -8px 10px hsl(0 0% 100% / 0.16),
-    0 8px 18px hsl(333 50% 28% / 0.14);
-}
-
-.floating-hello-kitty-hero__balloon::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10%;
-  width: 10%;
-  height: 12%;
-  background: currentColor;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  transform: translateX(-50%);
-}
-
-.floating-hello-kitty-hero__balloon--one {
-  left: 12%;
-  top: 6%;
-  color: hsl(333 86% 59%);
-  background: radial-gradient(circle at 32% 24%, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0) 24%),
-    linear-gradient(180deg, hsl(334 100% 77%), hsl(333 79% 61%));
-}
-
-.floating-hello-kitty-hero__balloon--two {
-  left: 42%;
-  top: 0;
-  color: hsl(327 74% 54%);
-  background: radial-gradient(circle at 32% 24%, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0) 24%),
-    linear-gradient(180deg, hsl(328 100% 80%), hsl(327 71% 62%));
-}
-
-.floating-hello-kitty-hero__balloon--three {
-  right: 4%;
-  top: 12%;
-  color: hsl(339 90% 64%);
-  background: radial-gradient(circle at 32% 24%, hsl(0 0% 100% / 0.7), hsl(0 0% 100% / 0) 24%),
-    linear-gradient(180deg, hsl(341 100% 81%), hsl(336 82% 67%));
-}
-
-.floating-hello-kitty-hero__string {
-  position: absolute;
-  bottom: 0;
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, hsl(334 56% 44% / 0.2), hsl(334 56% 44% / 0.85));
-  transform-origin: bottom center;
-}
-
-.floating-hello-kitty-hero__string--one {
-  left: 30%;
-  height: 58%;
-  transform: rotate(7deg);
-}
-
-.floating-hello-kitty-hero__string--two {
-  left: 52%;
-  height: 66%;
-  transform: rotate(1deg);
-}
-
-.floating-hello-kitty-hero__string--three {
-  left: 72%;
-  height: 54%;
-  transform: rotate(-8deg);
+.floating-hello-kitty-hero__bouquet {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+  margin-top: 0;
+  filter: drop-shadow(0 10px 16px hsl(333 46% 30% / 0.18));
 }
 
 .floating-hello-kitty-hero__confetti-cloud {
